@@ -13,19 +13,108 @@
         <div class="event-detail-img">
             <%= image_tag( '870x460.gif', alt: "Cocoa Academy") %>
         </div>
+        <div class="col-md-8 col-sm-8">
+          <h3 class="title"><%= @product.subtitle %></h3>
+          <p><%= @product.description %></p>
 
-        <h3 class="title"><%= @product.subtitle %></h3>
-        <p><%= @product.description %></p>
-
-        <!-- Social Icon -->
-        <div class="social-icon">
-            <a href="#" class="facebook facebook-pagle">FACEBOOK PAGE</a>
-            <a href="#" class="facebook fa fa-facebook"></a>
-            <a href="#" class="twitter fa fa-twitter"></a>
-            <a href="#" class=" googleplus fa fa-google-plus"></a>
-            <a href="#" class="vimeo fa fa-vimeo-square"></a>
-            <a href="#" class="linkedin fa fa-linkedin"></a>
+          <!-- Social Icon -->
+          <div class="social-icon">
+              <a href="#" class="facebook facebook-pagle">FACEBOOK PAGE</a>
+              <a href="#" class="facebook fa fa-facebook"></a>
+              <a href="#" class="twitter fa fa-twitter"></a>
+              <a href="#" class=" googleplus fa fa-google-plus"></a>
+              <a href="#" class="vimeo fa fa-vimeo-square"></a>
+              <a href="#" class="linkedin fa fa-linkedin"></a>
+          </div>
         </div>
+
+        <section class="ticket-resgister">
+            <div class="col-md-3 col-sm-3 col-md-offset-1"">
+                <div class="ticket clearfix">
+                    <h3 class="title">two day event</h3>
+                    <!-- ("%.2f" % 9999.99) -->
+                    <div class="ticket-value"><span>$<%= ("%.f" % @product.price) %></span></div>
+                    <ul>
+                        <li>Full-access to all sessions</li>
+                        <li>Free wifi at the workshop</li>
+                        <li>Conference plus lunch coffee/snacks</li>
+                    </ul>
+
+                    <%= form_tag charges_path, id:'chargesForm' do %>
+                      <article>
+                        <% if flash[:error].present? %>
+                          <div id="error_explanation">
+                            <p><%= flash[:error] %></p>
+                          </div>
+                        <% end %>
+                      </article>
+
+                      <script src="https://checkout.stripe.com/checkout.js"></script>
+                      <%= hidden_field_tag 'stripeToken' %>
+                      <%= hidden_field_tag 'stripeEmail' %>
+                      <%= hidden_field_tag 'amount', ("%.f" % @product.price) %>
+                      <a id="btn-buy" class="btn btn-pri"><i class="button-icon fa fa-arrow-circle-o-down"></i>Regıster</a>
+                      <!-- <button  type="button" class="btn btn-success btn-lg btn-block">Register</button> -->
+                      <script>
+                          var handler = StripeCheckout.configure({
+                            key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+                            token: function(token, arg) {
+                              document.getElementById("stripeToken").value = token.id;
+                              document.getElementById("stripeEmail").value = token.email;
+                              document.getElementById("chargesForm").submit();
+                            }
+                          });
+                           document.getElementById('btn-buy').addEventListener('click', function(e) {
+                            handler.open({
+                              name: 'Cocoa Academy',
+                              description: '<%=  @product.title %> ($<%= ("%.f" % @product.price) %>)',
+                              amount: 300.00
+                          });
+                          e.preventDefault();
+                         })
+                      </script>
+                    <% end %>
+                </div>
+
+
+                </div>
+
+            <%= form_tag charges_path, id:'chargeForm' do %>
+              <article>
+                <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                <% end %>
+              </article>
+
+              <script src="https://checkout.stripe.com/checkout.js"></script>
+              <%= hidden_field_tag 'stripeToken' %>
+              <%= hidden_field_tag 'stripeEmail' %>
+              <%= hidden_field_tag 'amount', ("%.f" % @product.price) %>
+              <a id="limited-btn-buy" class="btn btn-pri btn-lg">seating is limited ‒ register now</a>
+              <!-- <button  type="button" class="btn btn-success btn-lg btn-block">Register</button> -->
+              <script>
+                  var handler = StripeCheckout.configure({
+                    key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+                    token: function(token, arg) {
+                      document.getElementById("stripeToken").value = token.id;
+                      document.getElementById("stripeEmail").value = token.email;
+                      document.getElementById("chargesForm").submit();
+                    }
+                  });
+                   document.getElementById('limited-btn-buy').addEventListener('click', function(e) {
+                    handler.open({
+                      name: 'Cocoa Academy',
+                      description: '<%=  @product.title %> ($<%= ("%.f" % @product.price) %>)',
+                      amount: 300.00
+                  });
+                  e.preventDefault();
+                 })
+              </script>
+            <% end %>
+        </section>
+
     </div>
 </section>
 
@@ -369,41 +458,9 @@
             </section>
         </div>
     </div>
+
+
 </section>
 
-<section id="overview">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <i class="fa fa-4x fa-globe"></i>
-                <h2 class="uppercase">about conference</h2>
-                <p class="lead">Suspendisse potenti. Donec id magna id mauris volutpat aliquet.
-                    <br>Etiam mollis mi id tortor venenatis porta. In purus dolor, venenatis nec justo et, placerat semper neque. Aliquam purus dolor, elementum vitae ornare quis, aliquet sed lacus.</p>
-            </div>
-
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h3>Hurry Up! Only <span class="timer" data-from="575" data-to="198" data-speed="10000"></span> seats</h3>
-                <a class="button button-big button-dark" data-scroll href="#register">register</a>
-                <%= form_tag charges_path do %>
-                  <article>
-                    <% if flash[:error].present? %>
-                      <div id="error_explanation">
-                        <p><%= flash[:error] %></p>
-                      </div>
-                    <% end %>
-                    <label class="amount">
-                      <span>Amount: $5.00</span>
-                    </label>
-                  </article>
-
-                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                          data-description="A month's subscription"
-                          data-amount="500"
-                          data-locale="auto"></script>
-                <% end %>
-            </div>
-
-        </div>
-    </div>
+<section class="ticket-resgister">
 </section>
