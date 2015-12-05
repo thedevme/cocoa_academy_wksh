@@ -1,0 +1,128 @@
+<!-- Banner -->
+<div class="banner">
+    <div class="container">
+        <div class="center">
+            <h1 class="title">Get Ready for The Next Event. Its Begining!</h1>
+            <p>Etiam tristique ornare massa. Suspendisse in porta mauris. Phasellus quis libero eget diam tincidunt ornare. Suspendisse et libero urna. Cras auctor cursus purus, eget fringilla tellus dictum tempus. Ut gravida laoreet tincidunt. </p>
+
+            <!-- Clock -->
+            <div class="clock clearfix">
+
+                <div class="clock-item clock-days ">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div id="canvas-days" class="clock-canvas"></div>
+
+                            <div class="clock-content">
+                                <p class="val">0</p>
+                                <p class="typ type-days">DAYS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clock-item clock-hours ">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div id="canvas-hours" class="clock-canvas"></div>
+
+                            <div class="clock-content">
+                                <p class="val">0</p>
+                                <p class="typ type-hours ">HOURS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clock-item clock-minutes ">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div id="canvas-minutes" class="clock-canvas"></div>
+
+                            <div class="clock-content">
+                                <p class="val">0</p>
+                                <p class="typ type-minutes">MINUTES</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clock-item clock-seconds ">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div id="canvas-seconds" class="clock-canvas"></div>
+
+                            <div class="clock-content">
+                                <p class="val">0</p>
+                                <p class="typ type-seconds">SECONDS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Event Form -->
+<section class="eventform newsection">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <small>Find what you want</small>
+                <h2 class="title">event or conference</h2>
+            </div>
+
+            <div class="col-md-9 eventform-con">
+                <form>
+                    <div class="form-input search-location">
+                        <input type="text" value="" placeholder="Select Location">
+                        <i class="icon icon-s fa fa-search"></i>
+                        <button class="icon fa fa-globe"></button>
+                    </div>
+
+                    <div class="form-input ">
+                        <button class="btn btn-pri ">fınd event</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--  Events -->
+<section class="events newsection">
+    <div class="container">
+
+        <!-- Tabs memu -->
+        <div class="tabs">
+          <div class="event-container">
+              <div class="row">
+                <% @products.each do |product| %>
+                  <div class="col-md-3">
+                      <div class="event">
+                          <div class="eventsimg">
+                            <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
+                          </div>
+                          <div class="event-content">
+                              <h3 class="title"><%= product.title %></h3>
+                              <p><%= product.subtitle %></p>
+                              <button id="btn-buy" type="button" class="btn btn-new-pri">Buy ticket</button>
+                              <!-- <%= link_to 'Show', @product %> -->
+                              <!-- <a href="#" class="btn btn-new-pri">buy tıcket</a> -->
+                          </div>
+                          <div class="links clearfix">
+                              <ul>
+                                  <li><a class='st_sharethis_large' displayText='ShareThis'><i class="icon fa fa-share"></i> share</a></li>
+                                  <li><a href="#"><i class="icon fa fa-heart"></i>26</a></li>
+                                  <li><a href="#" ><i class="icon fa fa-comment"></i>33</a> </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                <% end %>
+
+
+              </div><!-- row -->
+          </div>
+        </div>
+    </div>
+</section>

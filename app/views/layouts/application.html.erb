@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CocoaAcademyWksh</title>
+  <title>Cocoa Academy</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="header-container">
 
+      <!-- Main Header  -->
+      <div class="main-header affix">
+
+          <!-- Moblie Nav Wrapper  -->
+          <div class="mobile-nav-wrapper">
+              <div class="container ">
+
+                  <!-- logo  -->
+                 <div id="logo">
+  <a href="index.htm"><%= image_tag('logo.png', alt: "Cocoa Academy") %></a>
+  </div>
+
+                  <!-- moblie-menu-icon -->
+
+                  <div class="mobile-menu-icon">
+                      <i class="fa fa-bars"></i>
+                  </div>
+
+                  <!-- Nav -->
+
+              </div>
+          </div>
+      </div>
+  </header> <!-- header -->
 <%= yield %>
 
 </body>
