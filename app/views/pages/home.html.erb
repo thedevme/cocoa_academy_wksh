@@ -89,7 +89,7 @@
     </div>
 </section>
 <!--  Events -->
-<section class="events newsection">
+<section class="events-listing newsection">
     <div class="container">
 
         <!-- Tabs memu -->
@@ -98,12 +98,13 @@
               <div class="row">
                 <% @products.each do |product| %>
                   <div class="col-md-3">
-                      <div class="event">
+                      <div class="event-listing">
                           <div class="eventsimg">
                             <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
                           </div>
                           <div class="event-content">
-                              <h3 class="title"><%= product.title %></h3>
+                            <!--  -->
+                              <h3 class="title"> <%= link_to product.title, product %></h3>
                               <p><%= product.subtitle %></p>
                               <button id="btn-buy" type="button" class="btn btn-new-pri">Buy ticket</button>
                               <!-- <%= link_to 'Show', @product %> -->

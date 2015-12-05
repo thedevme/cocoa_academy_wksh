@@ -1,287 +1,412 @@
 
+<section class="event-detail productdetail">
+  <div class="container">
+    <h2 class="main-title "><a href="#"><%= @product.title %></a></h2>
+    <!-- meta -->
+    <ul class="meta clearfix">
+        <li class="date"><i class="icon fa fa-calendar"></i> Feb 17-19, 2014</li>
+        <li><a href="#"><i class="icon fa fa-home"></i> Grand Hotel Califonria</a></li>
+        <li><a href="#"><i class="icon fa fa-map-marker"></i>Istanbul / Turkey</a></li>
+    </ul>
+    <!-- event-detail-img -->
+    <div class="event-detail-img">
+      <%= image_tag('870x460.gif', alt: "Cocoa Academy") %>
+    </div>
+
+    <h3 class="title"><%= @product.subtitle %></h3>
+
+    <p><%= @product.description %></p>
+
+    <!-- Social Icon -->
+    <div class="social-icon">
+        <a href="#" class="facebook facebook-pagle">FACEBOOK PAGE</a>
+        <a href="#" class="facebook fa fa-facebook"></a>
+        <a href="#" class="twitter fa fa-twitter"></a>
+        <a href="#" class=" googleplus fa fa-google-plus"></a>
+        <a href="#" class="vimeo fa fa-vimeo-square"></a>
+        <a href="#" class="linkedin fa fa-linkedin"></a>
+    </div>
+  </div>
+</section>
+
 <!-- Events -->
-<section class="events text-left newsection">
-    <div class="container">
+<section class="events text-left productdetail">
         <div class="row">
             <!-- col-md-12 -->
             <div class="col-md-12 col-sm-12">
-                <!--Event Detail  -->
-                <section class="event-detail newsection">
-                    <h2 class="main-title "><a href="#"><%= @product.title %></a></h2>
-                    <!-- meta -->
-                    <ul class="meta clearfix">
-                        <li class="date"><i class="icon fa fa-calendar"></i> Feb 17-19, 2014</li>
-                        <li><a href="#"><i class="icon fa fa-home"></i> Grand Hotel Califonria</a></li>
-                        <li><a href="#"><i class="icon fa fa-map-marker"></i>Istanbul / Turkey</a></li>
-                    </ul>
-                    <!-- event-detail-img -->
-                    <div class="event-detail-img">
-                      <%= image_tag('870x460.gif', alt: "Cocoa Academy") %>
-                    </div>
-
-                    <h3 class="title"><%= @product.subtitle %></h3>
-
-                    <p><%= @product.description %></p>
-
-                    <!-- Social Icon -->
-                    <div class="social-icon">
-                        <a href="#" class="facebook facebook-pagle">FACEBOOK PAGE</a>
-                        <a href="#" class="facebook fa fa-facebook"></a>
-                        <a href="#" class="twitter fa fa-twitter"></a>
-                        <a href="#" class=" googleplus fa fa-google-plus"></a>
-                        <a href="#" class="vimeo fa fa-vimeo-square"></a>
-                        <a href="#" class="linkedin fa fa-linkedin"></a>
-                    </div>
-                </section>
-
-                <!-- speakers-tabs -->
-                <section class="speakers-tabs newsection">
-                    <h2 class="title">Schedule with Speakers</h2>
-                    <div id="speakers-tabs">
-
-                        <ul class="speaker-ul resp-tabs-list clearfix">
-                            <li>Monday, 9th</li>
-                            <li>Tuesday, 11th</li>
-                            <li>Wednesday, 12th</li>
-                            <li>Monday, 9th</li>
-                        </ul>
-                        <div class="resp-tabs-container">
-                            <div>
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                             <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
-                                        </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Jane Crowley <span class="job">Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
-                                        </div>
+                <section id="schedule">
+                	<div class="container">
+                    	<div class="row">
+                        	<div class="col-md-12 col-sm-12">
+                            	<h2 class="uppercase text-center">Schedule</h2>
+                                <div id="days" class="owl-carousel">
+                                	<div class="item uppercase">
+                                    	<h4 class="uppercase hidden-xs">saturday</h4>
+                                    	<h5>day 1</h5>
                                     </div>
-                                </div>
 
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                           <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
+                                    <div class="item uppercase">
+                                    	<h4 class="uppercase hidden-xs">sunday</h4>
+                                    	<h5>day 2</h5>
+                                    </div>
 
-                                        </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Yaris Crowley <span class="job">Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
-                                        </div>
+                                    <div class="item uppercase">
+                                    	<h4 class="uppercase hidden-xs">monday</h4>
+                                    	<h5>day 3</h5>
                                     </div>
-                                </div>
 
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                           <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
-                                        </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Jane Crowley <span class="job">Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
-                                        </div>
+                                    <div class="item uppercase">
+                                    	<h4 class="uppercase hidden-xs">tuesday</h4>
+                                    	<h5>day 4</h5>
                                     </div>
-                                </div>
+        						          </div>
 
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                           <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
-                                        </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Yaris Crowley <span class="job">Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                              <div id="timetable" class="owl-carousel owl-theme">
 
-                            <div>
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                           <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
-                                        </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Jane Crowley <span class="job">Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                           <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
-                                        </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Yaris Crowley <span class="job">Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <!-- DAY 1 -->
+                                    <div id="day1" class="item">
 
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                           <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
-                                        </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Jane Crowley<span class="job">Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">09.00 AM</span>
+                                                </div>
 
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                           <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
+                                                <div class="description">
+                                                    <h3>Sed vulputate sem magna</h3>
+                                                    <p>Vestibulum vel accumsan arcu. Duis nisl purus, interdum nec arcu nec, rutrum fringilla neque. Pellentesque vestibulum turpis sit amet venenatis faucibus.</p>
+                                                    <span class="name">Leo Davis</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Jane Crowley <span class="job"> Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div>
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                           <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
-                                        </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Jane Crowley <span class="job">Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                           <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
-                                        </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Yaris Crowley <span class="job"> Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">10.30 AM</span>
+                                                </div>
 
-                            </div>
+                                                <div class="description">
+                                                    <h3>Morbi semper ac diam</h3>
+                                                    <p>Vestibulum tincidunt aliquam feugiat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>
+                                                    <span class="name">Danielle Grant</span>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                            <div>
-                                <div class="speakers">
-                                    <div class="speaker clearfix">
-                                        <div class="speaker-img">
-                                           <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-cutlery"></i>
+                                                    <span class="time">12.00 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Launch</h3>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="speaker-content">
-                                            <p class="author">Jane Crowley <span class="job">Web Expert</span></p>
-                                            <h3 class="title"><a href="#">Using Social Services Increase Your Sales </a></h3>
-                                            <ul class="meta clearfix">
-                                                <li><i class="icon fa fa-times-circle-o"></i>08:00 to 18:00 pm</li>
-                                                <li><a href="#"><i class="icon fa fa-map-marker"></i>Hall B</a></li>
-                                            </ul>
-                                            <p>Aliquam id metus purus. Aliquam ultricies massa a eros euismod mattis. Nunc commodo enim at commodo pellentesque. Etiam turpis eros, lobortis non libero vel, pharetra iaculis augue. [...] </p>
-                                            <a href="#" class="btn btn-border">read more</a> <a href="#" class="btn btn-border">About Speaker</a>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">01.30 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Ut posuere purus in elementum tincidunt</h3>
+                                                    <p>Integer ut felis diam. Duis sit amet sapien non ipsum ornare consequat. Nunc suscipit ut massa a adipiscing. Integer ac convallis diam. In sagittis eleifend urna in porttitor.</p>
+                                                    <span class="name">Jayden Hawkins</span>
+                                                </div>
+                                            </div>
                                         </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">03.00 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Proin luctus enim</h3>
+                                                    <p>Proin luctus enim mauris, vitae tristique nisi suscipit nec. Phasellus euismod gravida est, id sagittis ligula posuere ac.</p>
+                                                    <span class="name">Susan Robertson</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div class="bar"><p><i class="icon fa fa-glass"></i>LETS HAVE A BREAK, ENJOY IT</p></div>
-                                </div>
+
+                                    <!-- DAY 2 -->
+                                    <div id="day2" class="item">
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">09.30 AM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Quis bibendum purus viverra id</h3>
+                                                    <p>Nulla nulla risus, feugiat ut semper id, luctus ac neque. Sed fringilla, metus at elementum elementum, tortor ipsum convallis mi, non luctus sapien urna sed purus.</p>
+                                                    <span class="name">Warren Wallace</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">11.00 AM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Aliquam pretium fringilla dignissim</h3>
+                                                    <p>Phasellus faucibus id est at tristique. Maecenas id metus posuere, pharetra tellus eu, iaculis elit. Etiam nec fringilla enim.</p>
+                                                    <span class="name">Marie Sanchez</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-cutlery"></i>
+                                                    <span class="time">12.30 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Launch</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">02.00 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Interdum et malesuada fames ac ante ipsum</h3>
+                                                    <p>Integer ut felis diam. Duis sit amet sapien non ipsum ornare consequat. Nunc suscipit ut massa a adipiscing. Integer ac convallis diam. In sagittis eleifend urna in porttitor.</p>
+                                                    <span class="name">Larry Watson</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">03.30 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Integer placerat scelerisque pharetra</h3>
+                                                    <p>Mauris laoreet lorem dapibus, mollis mi nec, lacinia neque. Cras bibendum orci lectus, aliquet auctor ante lobortis in</p>
+                                                    <span class="name">Randy Graves</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- DAY 3 -->
+                                    <div id="day3" class="item">
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">09.00 AM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Etiam adipiscing consequat malesuada</h3>
+                                                    <p>Duis sit amet pulvinar est. Nullam vehicula gravida porttitor. Nullam accumsan ornare massa ut porta. Ut turpis neque, sodales eu venenatis ut, tincidunt id neque. Etiam porttitor sapien a velit mollis fringilla nec nec lorem.</p>
+                                                    <span class="name">Brandie Peterson</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">10.30 AM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Vestibulum eget dui enim</h3>
+                                                    <p>Maecenas faucibus odio vitae nibh tempus cursus. Nulla nec commodo justo, non pellentesque enim.</p>
+                                                    <span class="name">Bertha Lane</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-cutlery"></i>
+                                                    <span class="time">12.00 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Launch</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">01.30 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Nullam a condimentum diam, a elementum diam</h3>
+                                                    <p>Suspendisse fermentum commodo risus in ultricies. Vivamus semper lacinia nibh ut lobortis. Morbi odio arcu, ultricies ac ipsum nec, imperdiet luctus enim.</p>
+                                                    <span class="name">Vincent Dunn</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">03.00 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Quisque ut elementum dui, non adipiscing sapien</h3>
+                                                    <p>Vivamus ac pellentesque sem, congue iaculis dolor. Sed id eros congue, ornare justo eget, placerat nibh. Sed fermentum lorem est. Ut venenatis lacus ut urna tempus aliquam.</p>
+                                                    <span class="name">Vicki Phillips</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- DAY 4 -->
+                                    <div id="day4" class="item">
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">09.30 AM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>In tincidunt sollicitudin sapien vitae tincidunt</h3>
+                                                    <p>Uspendisse sed scelerisque eros. Aenean a mi libero. Morbi imperdiet massa in dapibus lobortis.</p>
+                                                    <span class="name">Genesis Daniels</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">11.30 AM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Aliquam erat volutpat</h3>
+                                                    <p>Proin consequat mauris in sem aliquet tempor. Sed sodales libero lectus, quis laoreet diam sagittis vitae. Quisque quis sem sit amet ipsum eleifend eleifend.</p>
+                                                    <span class="name">Carmen Hicks</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-cutlery"></i>
+                                                    <span class="time">01.00 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Launch</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">02.30 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Nulla porta enim aliquet sem rutrum convallis</h3>
+                                                    <p>Nam imperdiet tellus ac interdum congue. Sed nulla metus, posuere eu auctor vel, imperdiet et leo.</p>
+                                                    <span class="name">Dean Henderson</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="event">
+                                            <div class="event-inner">
+                                                <div class="icon">
+                                                    <i class="fa fa-2x fa-clock-o"></i>
+                                                    <span class="time">03.30 PM</span>
+                                                </div>
+
+                                                <div class="description">
+                                                    <h3>Proin luctus enim</h3>
+                                                    <p>Proin luctus enim mauris, vitae tristique nisi suscipit nec. Phasellus euismod gravida est, id sagittis ligula posuere ac.</p>
+                                                    <span class="name">Connie Cox</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                  </div>
                             </div>
                         </div>
                     </div>
-
                 </section>
 
-                <!--Ricket Resgister  -->
-                <section class="ticket-resgister">
-                    <h2 class="title centered">Get Tickets and Register Now</h2>
-                    <div class="row">
 
-                      <div class="col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4">
-                          <div class="ticket clearfix">
-                              <h3 class="title">two day tıcket</h3>
-                              <!-- ("%.2f" % 9999.99) -->
-                              <div class="ticket-value"><span>$<%= ("%.f" % @product.price) %></span></div>
-                              <ul>
-                                  <li>Full-access to all sessions</li>
-                                  <li>Free wifi at the conference</li>
-                                  <li>Conference plus lunch coffee/snacks</li>
-                              </ul>
-                              <a href="#" class="btn btn-pri"><i class="button-icon fa fa-arrow-circle-o-down"></i>Regıster</a>
-                          </div>
+                <!--Ticket Resgister  -->
+                <section class="ticket-resgister">
+                    <div class="container">
+                      <h2 class="title centered">Get Tickets and Register Now</h2>
+                      <div class="row">
+
+                        <div class="col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4">
+                            <div class="ticket clearfix">
+                                <h3 class="title">two day tıcket</h3>
+                                <!-- ("%.2f" % 9999.99) -->
+                                <div class="ticket-value"><span>$<%= ("%.f" % @product.price) %></span></div>
+                                <ul>
+                                    <li>Full-access to all sessions</li>
+                                    <li>Free wifi at the conference</li>
+                                    <li>Conference plus lunch coffee/snacks</li>
+                                </ul>
+                                <a href="#" class="btn btn-pri"><i class="button-icon fa fa-arrow-circle-o-down"></i>Regıster</a>
+                            </div>
+                        </div>
+
+
                       </div>
 
-
+                      <a href="#" class="btn btn-pri btn-lg">seating is limited ‒ register now</a>
                     </div>
-
-                    <a href="#" class="btn btn-pri btn-lg">seating is limited ‒ register now</a>
                 </section>
             </div>
             </div>
-        </div>
 </section>

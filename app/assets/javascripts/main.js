@@ -156,3 +156,75 @@ $(window).on('load', function() {
       }
     });
   });
+	jQuery(document).ready(function($) {
+
+	   'use strict';
+	//OWLCAROUSEL SCHEDULE
+	var timetable = $("#timetable");
+  var days = $("#days");
+
+  timetable.owlCarousel({
+    singleItem : true,
+    slideSpeed : 1000,
+    navigation: false,
+    pagination:false,
+    afterAction : syncPosition,
+    responsiveRefreshRate : 200,
+  });
+
+  days.owlCarousel({
+   	items : 4,
+    itemsMobile       : [479,4],
+    pagination:false,
+    responsiveRefreshRate : 100,
+    afterInit : function(el){
+      el.find(".owl-item").eq(0).addClass("synced");
+    }
+  });
+
+  function syncPosition(el){
+    var current = this.currentItem;
+    $("#days")
+      .find(".owl-item")
+      .removeClass("synced")
+      .eq(current)
+      .addClass("synced")
+    if($("#days").data("owlCarousel") !== undefined){
+      center(current)
+    }
+  }
+
+  $("#days").on("click", ".owl-item", function(e){
+    e.preventDefault();
+    var number = $(this).data("owlItem");
+    timetable.trigger("owl.goTo",number);
+  });
+
+  function center(number){
+    var daysvisible = days.data("owlCarousel").owl.visibleItems;
+    var num = number;
+    var found = false;
+    for(var i in daysvisible){
+      if(num === daysvisible[i]){
+        var found = true;
+      }
+    }
+
+    if(found===false){
+      if(num>daysvisible[daysvisible.length-1]){
+        days.trigger("owl.goTo", num - daysvisible.length+2)
+      }else{
+        if(num - 1 === -1){
+          num = 0;
+        }
+        days.trigger("owl.goTo", num);
+      }
+    } else if(num === daysvisible[daysvisible.length-1]){
+      days.trigger("owl.goTo", daysvisible[1])
+    } else if(num === daysvisible[0]){
+      days.trigger("owl.goTo", num-1)
+    }
+
+  }
+
+	});
