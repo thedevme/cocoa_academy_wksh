@@ -52,7 +52,8 @@
                       <script src="https://checkout.stripe.com/checkout.js"></script>
                       <%= hidden_field_tag 'stripeToken' %>
                       <%= hidden_field_tag 'stripeEmail' %>
-                      <%= hidden_field_tag 'amount', ("%.f" % @product.price) %>
+                      <%= hidden_field_tag 'amount', 30000 %>
+                      <%= hidden_field_tag 'title', @product.title %>
                       <a id="btn-buy" class="btn btn-pri"><i class="button-icon fa fa-arrow-circle-o-down"></i>Regıster</a>
                       <!-- <button  type="button" class="btn btn-success btn-lg btn-block">Register</button> -->
                       <script>
@@ -67,8 +68,8 @@
                            document.getElementById('btn-buy').addEventListener('click', function(e) {
                             handler.open({
                               name: 'Cocoa Academy',
-                              description: '<%=  @product.title %> ($<%= ("%.f" % @product.price) %>)',
-                              amount: 300.00
+                              description: '<%=  @product.title %> ($300)',
+                              amount: 30000
                           });
                           e.preventDefault();
                          })
