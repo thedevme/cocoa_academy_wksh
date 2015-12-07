@@ -1,6 +1,6 @@
 <section class="event-detail productdetail">
     <div class="container">
-        <h2 class="main-title "><a href="#"><%= @product.title %></a></h2>
+        <h2 class="main-title "><a href="#"><%= @product.title.upcase %></a></h2>
         <!-- meta -->
         <ul class="meta clearfix">
             <li class="date"><i class="icon fa fa-calendar"></i> Feb 17-19, 2014</li>
@@ -52,7 +52,7 @@
                       <script src="https://checkout.stripe.com/checkout.js"></script>
                       <%= hidden_field_tag 'stripeToken' %>
                       <%= hidden_field_tag 'stripeEmail' %>
-                      <%= hidden_field_tag 'amount', 30000 %>
+                      <%= hidden_field_tag 'amount', @product.price_in_cents %>
                       <%= hidden_field_tag 'title', @product.title %>
                       <%= hidden_field_tag 'sku', @product.id %>
                       <a id="btn-buy" class="btn btn-pri"><i class="button-icon fa fa-arrow-circle-o-down"></i>Regıster</a>
@@ -70,7 +70,7 @@
                             handler.open({
                               name: 'Cocoa Academy',
                               description: '<%=  @product.title %> ($300)',
-                              amount: 30000
+                              amount: <%=  @product.price_in_cents %>
                           });
                           e.preventDefault();
                          })
@@ -81,40 +81,7 @@
 
                 </div>
 
-            <%= form_tag charges_path, id:'chargeForm' do %>
-              <article>
-                <% if flash[:error].present? %>
-                  <div id="error_explanation">
-                    <p><%= flash[:error] %></p>
-                  </div>
-                <% end %>
-              </article>
 
-              <script src="https://checkout.stripe.com/checkout.js"></script>
-              <%= hidden_field_tag 'stripeToken' %>
-              <%= hidden_field_tag 'stripeEmail' %>
-              <%= hidden_field_tag 'amount', ("%.f" % @product.price) %>
-              <a id="limited-btn-buy" class="btn btn-pri btn-lg">seating is limited ‒ register now</a>
-              <!-- <button  type="button" class="btn btn-success btn-lg btn-block">Register</button> -->
-              <script>
-                  var handler = StripeCheckout.configure({
-                    key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-                    token: function(token, arg) {
-                      document.getElementById("stripeToken").value = token.id;
-                      document.getElementById("stripeEmail").value = token.email;
-                      document.getElementById("chargesForm").submit();
-                    }
-                  });
-                   document.getElementById('limited-btn-buy').addEventListener('click', function(e) {
-                    handler.open({
-                      name: 'Cocoa Academy',
-                      description: '<%=  @product.title %> ($<%= ("%.f" % @product.price) %>)',
-                      amount: 300.00
-                  });
-                  e.preventDefault();
-                 })
-              </script>
-            <% end %>
         </section>
 
     </div>
@@ -129,7 +96,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
-                            <h2 class="uppercase text-center">Schedule</h2>
+                            <h1>SCHEDULE</h1>
                             <div id="days" class="owl-carousel">
                                 <% @product.schedule_days.each do |day| %>
                                 <div class="item uppercase">
@@ -151,5 +118,39 @@
 
 </section>
 
-<section class="ticket-resgister">
+<section class="limited">
+  <%= form_tag charges_path, id:'chargeForm' do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+    </article>
+  <a id="limited-btn-buy" class="btn btn-pri btn-lg">seating is limited ‒ register now</a>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <%= hidden_field_tag 'stripeToken' %>
+    <%= hidden_field_tag 'stripeEmail' %>
+    <%= hidden_field_tag 'amount', ("%.f" % @product.price) %>
+
+    <script>
+        var handler = StripeCheckout.configure({
+          key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+          token: function(token, arg) {
+            document.getElementById("stripeToken").value = token.id;
+            document.getElementById("stripeEmail").value = token.email;
+            document.getElementById("chargesForm").submit();
+          }
+        });
+         document.getElementById('limited-btn-buy').addEventListener('click', function(e) {
+          handler.open({
+            name: 'Cocoa Academy',
+            description: '<%=  @product.title %> ($<%= ("%.f" % @product.price) %>)',
+            amount: 300.00
+        });
+        e.preventDefault();
+       })
+    </script>
+  <% end %>
+
 </section>
