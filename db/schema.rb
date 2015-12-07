@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206002941) do
+ActiveRecord::Schema.define(version: 20151207114944) do
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
@@ -37,5 +37,27 @@ ActiveRecord::Schema.define(version: 20151206002941) do
     t.datetime "updated_at",  null: false
     t.string   "uuid"
   end
+
+  create_table "schedule_days", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "schedule_days", ["product_id"], name: "index_schedule_days_on_product_id"
+
+  create_table "schedule_events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "instructor"
+    t.time     "start_time"
+    t.string   "icon",            default: "fa-clock-o"
+    t.integer  "schedule_day_id"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
+
+  add_index "schedule_events", ["schedule_day_id"], name: "index_schedule_events_on_schedule_day_id"
 
 end
