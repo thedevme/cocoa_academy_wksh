@@ -19,6 +19,4 @@ day.schedule_events.create(name: "Swift Advanced ", description: "More of what y
 day.schedule_events.create(name: "Lunch", description: "CHOW IS ON", instructor: "", start_time: "12:00PM", icon: "fa-cutlery")
 day.schedule_events.create(name: "Deploying your app", description: "Get that sweet Apple $$$", instructor: "Gavin", start_time: "2:00PM")
 
-day = swift101.schedule_days.create(name: "Sunday")
-
 building_an_app = Product.create(title: "Building an iOS App", subtitle: "Cras mattis consectetur purus sit amet fermentum.", description: "Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.", sku: "SWIFT201", price: "300.00", product_image: "building-apps.png", details: "Building an iOS App details go here.")

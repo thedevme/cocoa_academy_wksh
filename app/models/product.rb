@@ -1,5 +1,10 @@
 class Product < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+  
   has_many :schedule_days
+
+
 
 def full_description
     "#{self.title} #{self.subtitle}"

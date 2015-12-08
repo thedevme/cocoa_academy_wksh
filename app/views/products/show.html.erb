@@ -146,7 +146,7 @@
           handler.open({
             name: 'Cocoa Academy',
             description: '<%=  @product.title %> ($<%= ("%.f" % @product.price) %>)',
-            amount: 300.00
+            amount: <%=  @product.price_in_cents %>
         });
         e.preventDefault();
        })

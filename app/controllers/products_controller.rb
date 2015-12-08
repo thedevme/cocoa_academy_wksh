@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def find_product
-    @product = Product.find(params[:id])
+    @product = Product.find_by_slug(params[:id])
   end
 
 end
