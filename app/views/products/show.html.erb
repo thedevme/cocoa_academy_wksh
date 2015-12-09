@@ -3,18 +3,18 @@
         <h2 class="main-title "><a href="#"><%= @product.title.upcase %></a></h2>
         <!-- meta -->
         <ul class="meta clearfix">
-            <li class="date"><i class="icon fa fa-calendar"></i> Feb 17-19, 2014</li>
-            <li><a href="#"><i class="icon fa fa-home"></i> Grand Hotel Califonria</a>
+            <li class="date"><i class="icon fa fa-calendar"></i> <%= @product.date %></li>
+            <li><a href="#"><i class="icon fa fa-home"></i> <%= @product.location %></a>
             </li>
-            <li><a href="#"><i class="icon fa fa-map-marker"></i>Istanbul / Turkey</a>
+            <li><a href="#"><i class="icon fa fa-map-marker"></i><%= @product.city %></a>
             </li>
         </ul>
         <!-- event-detail-img -->
         <div class="event-detail-img">
-            <%= image_tag( '870x460.gif', alt: "Cocoa Academy") %>
+            <%= image_tag(@product.product_image, alt: @product.title) %>
         </div>
         <div class="col-md-8 col-sm-8">
-          <h3 class="title"><%= @product.subtitle %></h3>
+          <h3 class="title">In this workshop:</h3>
           <p><%= @product.description %></p>
 
           <!-- Social Icon -->
@@ -56,7 +56,7 @@
                       <%= hidden_field_tag 'title', @product.title %>
                       <%= hidden_field_tag 'sku', @product.id %>
                       <a id="btn-buy" class="btn btn-pri"><i class="button-icon fa fa-arrow-circle-o-down"></i>Regıster</a>
-                      <!-- <button  type="button" class="btn btn-success btn-lg btn-block">Register</button> -->
+                      <!-- <button  type="button" class="btn btn-success btn-lg btn-block">Buy ticket</button> -->
                       <script>
                           var handler = StripeCheckout.configure({
                             key: '<%= Rails.configuration.stripe[:publishable_key] %>',
@@ -127,7 +127,7 @@
         </div>
       <% end %>
     </article>
-  <a id="limited-btn-buy" class="btn btn-pri btn-lg">seating is limited ‒ register now</a>
+  <a id="limited-btn-buy" class="btn btn-pri btn-lg">seating is limited ‒ Buy ticket now</a>
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <%= hidden_field_tag 'stripeToken' %>
     <%= hidden_field_tag 'stripeEmail' %>
