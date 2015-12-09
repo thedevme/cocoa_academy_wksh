@@ -9,21 +9,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="header-container">
-      <!-- Main Header  -->
-      <div class="main-header affix">
 
-          <!-- Moblie Nav Wrapper  -->
-          <div class="mobile-nav-wrapper">
-              <div class="container ">
-                  <!-- logo  -->
-                 <div id="logo">
-                   <%= link_to image_tag("logo.png"), root_path %></div>
-              </div>
-          </div>
+
+<header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+  <div class="container">
+    <% if notice %>
+      <%= notice %>
+    <% end %>
+    <% if alert %>
+      <%= alert %>
+    <% end %>
+      <div class="navbar-header">
+          <div class="navbar-brand large-logo"><%= link_to image_tag("logo-large.png"), root_path %></div>
+          <div class="navbar-brand scrolling-logo"><%= link_to image_tag("logo.png"), root_path %></div>
       </div>
-  </header> <!-- header -->
+  </div>
+</header><!--/header-->
+
+
 <%= yield %>
+
+<nav id="footer">
+    <div class="container">
+        <div class="pull-left fnav">
+            <p>Copyright © 2015 <%= link_to " Cocoa Academy LLC", root_path %>.  All rights reserved. </p>
+        </div>
+        <div class="pull-right fnav">
+            <ul class="footer-social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 </body>
 </html>

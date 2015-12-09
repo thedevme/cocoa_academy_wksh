@@ -2,8 +2,8 @@
 <div class="banner">
     <div class="container">
         <div class="center">
-            <h1 class="title">Get Ready for The Next Event. Its Begining!</h1>
-            <p>Etiam tristique ornare massa. Suspendisse in porta mauris. Phasellus quis libero eget diam tincidunt ornare. Suspendisse et libero urna. Cras auctor cursus purus, eget fringilla tellus dictum tempus. Ut gravida laoreet tincidunt. </p>
+            <h1 class="title">Start Learning iOS Development in 2016</h1>
+            <p>So you have an app idea that will make you a jillion bucks but don’t know where to begin. Learn the tools and what it takes to create the next big app in 2016. Cocoa Academy brings iOS workshops to the Tampa and St. Petersburg area. Sign up now and don't let someone snag your big app idea!</p>
 
             <!-- Clock -->
             <div class="clock clearfix">
@@ -65,28 +65,33 @@
 </div>
 <!-- Event Form -->
 <section class="eventform newsection">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <small>Find what you want</small>
-                <h2 class="title">event or conference</h2>
-            </div>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-3">
+              <small>Sign up for the Cocoa Academy</small>
+              <h2 class="title">newsletter</h2>
+          </div>
+          <div class="col-md-9 eventform-con">
+            <% if cookies[:saved_lead] %>
+              <small>Thanks for signing up!</small>
+            <% else %>
+              <%= form_for @lead, html: {id: "contactform" }  do |f| %>
+                <div class="form-input "><%= f.text_field :name, id: "contactname", class: "textflied", placeholder: "Name" %>
+                <i class="icon fa fa-user"></i>
+                </div>
 
-            <div class="col-md-9 eventform-con">
-                <form>
-                    <div class="form-input search-location">
-                        <input type="text" value="" placeholder="Select Location">
-                        <i class="icon icon-s fa fa-search"></i>
-                        <button class="icon fa fa-globe"></button>
-                    </div>
+                <!-- class="btn btn-pri " -->
+                <div class="form-input"><%= f.text_field :email, id: "email", class: "textflied", placeholder: "Email" %>
+                <i class="icon fa fa-envelope"></i></div>
+                <%= f.submit "Signup", class: "btn btn-pri" %>
+              <% end %>
+            <% end %>
 
-                    <div class="form-input ">
-                        <button class="btn btn-pri ">fınd event</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+
+
+          </div>
+      </div>
+  </div>
 </section>
 <!--  Events -->
 <section class="events-listing newsection">
@@ -100,21 +105,18 @@
                   <div class="col-md-3">
                       <div class="event-listing">
                           <div class="eventsimg">
-                            <%= image_tag('515x390.gif', alt: "Cocoa Academy") %>
+                            <%= link_to image_tag(product.product_thumb_image), product %>
                           </div>
                           <div class="event-content">
-                            <!--  -->
                               <h3 class="title"> <%= link_to product.title, product %></h3>
                               <p><%= product.subtitle %></p>
                               <button id="btn-buy" type="button" class="btn btn-new-pri">Buy ticket</button>
-                              <!-- <%= link_to 'Show', @product %> -->
-                              <!-- <a href="#" class="btn btn-new-pri">buy tıcket</a> -->
                           </div>
                           <div class="links clearfix">
                               <ul>
                                   <li><a class='st_sharethis_large' displayText='ShareThis'><i class="icon fa fa-share"></i> share</a></li>
-                                  <li><a href="#"><i class="icon fa fa-heart"></i>26</a></li>
-                                  <li><a href="#" ><i class="icon fa fa-comment"></i>33</a> </li>
+                                  <li><a href="#"></li>
+                                  <li><a href="#"></li>
                               </ul>
                           </div>
                       </div>
@@ -127,3 +129,15 @@
         </div>
     </div>
 </section>
+
+<!-- <form>
+    <div class="form-input search-location">
+        <input type="text" value="" placeholder="Select Location">
+        <i class="icon icon-s fa fa-search"></i>
+        <button class="icon fa fa-globe"></button>
+    </div>
+
+    <div class="form-input ">
+        <button class="btn btn-pri ">fınd event</button>
+    </div>
+</form> -->

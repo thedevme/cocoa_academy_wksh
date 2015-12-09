@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208021054) do
+ActiveRecord::Schema.define(version: 20151209004842) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 20151208021054) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "leads", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "leads", ["category_id"], name: "index_leads_on_category_id"
+
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.string   "subtitle"
@@ -47,9 +57,13 @@ ActiveRecord::Schema.define(version: 20151208021054) do
     t.decimal  "price"
     t.string   "product_image"
     t.string   "details"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "slug"
+    t.string   "product_thumb_image"
+    t.string   "location"
+    t.string   "city"
+    t.string   "date"
   end
 
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true
