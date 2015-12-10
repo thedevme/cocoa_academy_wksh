@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209004842) do
+ActiveRecord::Schema.define(version: 20151210031116) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -64,6 +64,9 @@ ActiveRecord::Schema.define(version: 20151209004842) do
     t.string   "location"
     t.string   "city"
     t.string   "date"
+    t.string   "location_image"
+    t.string   "location_address"
+    t.string   "email_image"
   end
 
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true

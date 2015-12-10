@@ -1,1 +1,66 @@
-<p> Thanks for buying </p>
+<!-- HEADER -->
+<table class="head-wrap" bgcolor="#FFFFFF">
+	<tr>
+		<td></td>
+		<td class="header container">
+
+				<div class="content">
+					<table bgcolor="#FFFFFF">
+					<tr>
+						<td><img src="http://www.cocoa.academy/assets/logo-large-2dd05655e5a1e9d7bac1aecbc6075235601515e8ce13e87254a35ee302edb385.png" /></td>
+					</tr>
+				</table>
+				</div>
+
+		</td>
+		<td></td>
+	</tr>
+</table>
+<!-- /HEADER -->
+
+
+<!-- BODY -->
+<table class="body-wrap">
+	<tr>
+		<td></td>
+		<td class="container" bgcolor="#FFFFFF">
+
+			<div class="content">
+			<table>
+				<tr>
+					<td>
+						<p><%= image_tag(@product.email_image) %> </p>
+            <p>Thank you for your purchase.<br><br> Your payment of $300 was received and you are comfirmed for <%= @product.title %> on <%= @product.date %> at <%= @product.location %>.  Please have this receipt with you when you come to the workshop. <br><br>If you have any questions please feel free to email us <a href="mailto:learn@cocoa.academy">here.</a>
+            </p>
+
+					</td>
+				</tr>
+			</table>
+			</div>
+
+		</td>
+		<td></td>
+	</tr>
+</table><!-- /BODY -->
+
+<!-- FOOTER -->
+<table class="footer-wrap">
+	<tr>
+		<td></td>
+		<td class="container">
+
+				<!-- content -->
+				<div class="content">
+				<table>
+				<tr>
+					<td align="center">
+						<p>Copyright © 2015 <%= link_to " Cocoa Academy LLC", "http://www.cocoa.academy" %>. All rights reserved.</p>
+					</td>
+				</tr>
+			</table>
+				</div>
+
+		</td>
+		<td></td>
+	</tr>
+</table><!-- /FOOTER -->

@@ -1,3 +1,8 @@
+<style>
+    .venue {
+      background:url('<%= asset_path @product.location_image %>') bottom center no-repeat;
+    }
+</style>
 <section class="event-detail productdetail">
     <div class="container">
         <h2 class="main-title "><a href="#"><%= @product.title.upcase %></a></h2>
@@ -16,23 +21,21 @@
         <div class="col-md-8 col-sm-8">
           <h3 class="title">In this workshop:</h3>
           <p><%= @product.description %></p>
-
           <!-- Social Icon -->
-          <div class="social-icon">
+          <!-- <div class="social-icon">
               <a href="#" class="facebook facebook-pagle">FACEBOOK PAGE</a>
               <a href="#" class="facebook fa fa-facebook"></a>
               <a href="#" class="twitter fa fa-twitter"></a>
               <a href="#" class=" googleplus fa fa-google-plus"></a>
               <a href="#" class="vimeo fa fa-vimeo-square"></a>
               <a href="#" class="linkedin fa fa-linkedin"></a>
-          </div>
+          </div> -->
         </div>
 
         <section class="ticket-resgister">
             <div class="col-md-3 col-sm-3 col-md-offset-1"">
                 <div class="ticket clearfix">
                     <h3 class="title">two day event</h3>
-                    <!-- ("%.2f" % 9999.99) -->
                     <div class="ticket-value"><span>$<%= ("%.f" % @product.price) %></span></div>
                     <ul>
                         <li>Full-access to all sessions</li>
@@ -52,11 +55,8 @@
                       <script src="https://checkout.stripe.com/checkout.js"></script>
                       <%= hidden_field_tag 'stripeToken' %>
                       <%= hidden_field_tag 'stripeEmail' %>
-                      <%= hidden_field_tag 'amount', @product.price_in_cents %>
-                      <%= hidden_field_tag 'title', @product.title %>
                       <%= hidden_field_tag 'sku', @product.id %>
-                      <a id="btn-buy" class="btn btn-pri"><i class="button-icon fa fa-arrow-circle-o-down"></i>Regıster</a>
-                      <!-- <button  type="button" class="btn btn-success btn-lg btn-block">Buy ticket</button> -->
+                      <a id="btn-buy" class="btn btn-pri"><i class="button-icon"></i>Buy ticket</a>
                       <script>
                           var handler = StripeCheckout.configure({
                             key: '<%= Rails.configuration.stripe[:publishable_key] %>',
@@ -114,8 +114,22 @@
             </section>
         </div>
     </div>
+</section>
 
-
+<section id="venue">
+	<div class="venue">
+    	<div class="container">
+        	<div class="row">
+            	<div class="venue-address">
+                    <h2 class="title">venue</h2>
+                    <p class="address">
+                    <i class="fa fa-2x fa-map-marker fa-inverse"></i>
+                      <%= @product.location_address %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
 </section>
 
 <section class="limited">

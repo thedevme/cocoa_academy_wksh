@@ -1,6 +1,18 @@
-<section class="event-detail productdetail">
+<section class="receipt-detail productdetail">
     <div class="container">
-      <p>Purchase successful!</p>
-      <p>Your purchase is <%= @purchase.inspect %></p>
+      <h1>Order Confirmation:</h1>
+      <hr class="aky">
+
+      <div class="row">
+          <div class="col-md-4 text-left">
+            <div class="eventsimg">
+              <%= image_tag(@product.product_thumb_image) %>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <p>Thank you for your purchase your confirmation has been emailed.<br><br> You are comfirmed for <%= @product.title %> on <%= @product.date %> at <%= @product.location %>. <br><br>If you have any questions please feel free to email us <a href="mailto:learn@cocoa.academy">here.</a>
+            </p>
+          </div>
+      </div>
     </div>
 </section>

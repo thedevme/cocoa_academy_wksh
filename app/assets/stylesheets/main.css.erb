@@ -373,6 +373,10 @@ nav#footer p{
 	border-right:0px;
 }
 
+.receipt p {
+	font-size: 20px;
+}
+
 /* SCHEDULE */
 
 #schedule {
@@ -782,7 +786,7 @@ text-align: center;
 /*Banner*/
 .banner{
 	background:url('<%= asset_path 'banner.png' %>') no-repeat left top;
-	min-height:680px;
+	min-height: 300px;
 	height:auto;
 	background-size:cover;
 	color:white;
@@ -1014,9 +1018,9 @@ text-align: center;
 
 
 /*events*/
-.events{
+.events {
 	text-align:center;
-	padding: 50px 0;
+	padding: 50px 0 0 0;
 }
 
 .events .title{
@@ -1625,6 +1629,7 @@ text-align: center;
 	font-weight:300;
 }
 
+
 .event-detail img{
 	max-width:100%;
 }
@@ -1653,6 +1658,72 @@ text-align: center;
 	font-size:18px;
 }
 .event-detail .social-icon a:hover{
+	border:1px solid ;
+}
+
+/*event-detail-container*/
+.receipt-detail{
+margin-bottom: 500px;
+}
+
+.receipt-detail-container{
+	text-align:left;
+}
+
+.receipt-detail .meta{
+	margin:0 0 15px 0;
+	font-size:14px;
+}
+
+.receipt-detail .main-title{
+	font-size:30px;
+	font-weight:bold;
+	color:#BF1238;
+}
+
+.receipt-detail .title{
+	font-size:30px;
+	font-weight:300;
+	margin-bottom:15px;
+}
+
+.receipt-detail .main-title a{
+	color:#BF1238;
+	font-size: 34px;
+}
+
+.receipt-detail p{
+	font-size: 20px;
+	font-weight:300;
+}
+
+.receipt-detail img{
+	max-width:100%;
+}
+
+.receipt-detail-img{
+	padding-bottom:40px;
+	margin-bottom:20px;
+	border-bottom:1px solid #c3c8cd;
+}
+
+.receipt-detail .social-icon{
+	margin-top:40px;
+
+}
+
+.receipt-detail .social-icon a{
+	border: 1px solid #c3c8cd;
+	color:#c3c8cd;
+	height: 40px;
+	width:40px;
+	line-height:40px;
+	border-radius:3px;
+	text-align:center;
+	margin-right:10px;
+	font-size:18px;
+}
+.receipt-detail .social-icon a:hover{
 	border:1px solid ;
 }
 
@@ -4172,6 +4243,7 @@ h3 {
 	widows: 3;
 }
 
+
 h2,
 h3 {
 	page-break-after: avoid;
@@ -4342,4 +4414,80 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b3c4e', end
   -ms-transform: rotateX(0deg);
   -o-transform: rotateX(0deg);
   transform: rotateX(0deg);
+}
+
+
+/* VENUE */
+
+#venue {
+	padding:0 0 80px 0;
+}
+
+.venue {
+	width:100%;
+	height:auto;
+	min-height:540px;
+	margin-bottom:15px;
+	position:relative;
+}
+
+.venue-address {
+	padding:15px;
+	margin:0 15px;
+	min-height:150px;
+	position:absolute;
+	bottom:0;
+}
+
+#venue h3 {
+	margin:30px 0;
+}
+
+#venue .venue-address h2 {
+	margin:0 0 15px 0;
+}
+
+#venue h4 {
+	font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+	margin-bottom:15px;
+}
+
+.venue .address {
+	font-size:21px;
+	margin-top:25px;
+}
+
+.venue h2{
+	font-size:24px;
+	font-weight:bold;
+	text-transform:uppercase;
+	color:#BF1238;
+	margin-bottom:15px;
+}
+
+#venue i {
+	margin:0 10px 0 0;
+ 	float:left;
+	vertical-align:middle;
+}
+
+.venue-address {
+	color:#ffffff;
+	background:#BF1238;
+}
+
+#venue h3 {
+	color:#e74c3c;
+}
+
+#venue .venue-address h2 {
+	color:#ffffff;
+}
+
+#venue i {
+	color:#e74c3c;
+}
+
+#venue .fa-inverse {
+	color:#ffffff;
 }
