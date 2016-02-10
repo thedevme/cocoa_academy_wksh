@@ -7,24 +7,32 @@
     <div class="container">
         <h2 class="main-title "><a href="#"><%= @product.title.upcase %></a></h2>
         <!-- meta -->
-        <!-- <ul class="meta clearfix">
+        <ul class="meta clearfix">
             <li class="date"><i class="icon fa fa-calendar"></i> <%= @product.date %></li>
             <li><a href="#"><i class="icon fa fa-home"></i> <%= @product.location %></a>
             </li>
             <li><a href="#"><i class="icon fa fa-map-marker"></i><%= @product.city %></a>
             </li>
-        </ul> -->
+        </ul>
         <!-- event-detail-img -->
         <div class="event-detail-img">
             <%= image_tag(@product.product_image, alt: @product.title) %>
         </div>
-        <!-- <div class="col-md-8 col-sm-8">
+        <div class="col-md-8 col-sm-8">
           <h3 class="title">In this workshop:</h3>
           <p><%= @product.description %></p>
+          <!-- Social Icon -->
+          <!-- <div class="social-icon">
+              <a href="#" class="facebook facebook-pagle">FACEBOOK PAGE</a>
+              <a href="#" class="facebook fa fa-facebook"></a>
+              <a href="#" class="twitter fa fa-twitter"></a>
+              <a href="#" class=" googleplus fa fa-google-plus"></a>
+              <a href="#" class="vimeo fa fa-vimeo-square"></a>
+              <a href="#" class="linkedin fa fa-linkedin"></a>
+          </div> -->
+        </div>
 
-        </div> -->
-
-        <!-- <section class="ticket-resgister">
+        <section class="ticket-resgister">
             <div class="col-md-3 col-sm-3 col-md-offset-1"">
                 <div class="ticket clearfix">
                     <h3 class="title">two day event</h3>
@@ -34,52 +42,62 @@
                         <li>Free wifi at the workshop</li>
                     </ul>
 
-                    <%= form_tag charges_path, id:'chargesForm' do %>
-                      <article>
-                        <% if flash[:error].present? %>
-                          <div id="error_explanation">
-                            <p><%= flash[:error] %></p>
-                          </div>
-                        <% end %>
-                      </article>
-
-                      <script src="https://checkout.stripe.com/checkout.js"></script>
-                      <%= hidden_field_tag 'stripeToken' %>
-                      <%= hidden_field_tag 'stripeEmail' %>
-                      <%= hidden_field_tag 'sku', @product.id %>
-                      <a id="btn-buy" class="btn btn-pri"><i class="button-icon"></i>Buy ticket</a>
-                      <script>
-                          var handler = StripeCheckout.configure({
-                            key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-                            token: function(token, arg) {
-                              document.getElementById("stripeToken").value = token.id;
-                              document.getElementById("stripeEmail").value = token.email;
-                              document.getElementById("chargesForm").submit();
-                            }
-                          });
-                           document.getElementById('btn-buy').addEventListener('click', function(e) {
-                            handler.open({
-                              name: 'Cocoa Academy',
-                              description: '<%=  @product.title %> ($300)',
-                              amount: <%=  @product.price_in_cents %>
-                          });
-                          e.preventDefault();
-                         })
-                      </script>
-                    <% end %>
+                    
                 </div>
 
 
                 </div>
 
 
-        </section> -->
+        </section>
 
     </div>
 </section>
 
 <!-- Events -->
+<section class="events text-left productdetail">
+    <div class="row">
+        <!-- col-md-12 -->
+        <div class="col-md-12 col-sm-12">
+            <section id="schedule">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <h1>SCHEDULE</h1>
+                            <div id="days" class="owl-carousel">
+                                <% @product.schedule_days.each do |day| %>
+                                <div class="item uppercase">
+                                    <h4 class="uppercase hidden-xs"><%= day.name %></h4>
+                                </div>
+                                <% end %>
+                            </div>
 
+                            <div id="timetable" class="owl-carousel owl-theme">
+                                <%= render @product.schedule_days %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+<section id="venue">
+	<div class="venue">
+    	<div class="container">
+        	<div class="row">
+            	<div class="venue-address">
+                    <h2 class="title">venue</h2>
+                    <p class="address">
+                    <i class="fa fa-2x fa-map-marker fa-inverse"></i>
+                      <%= @product.location_address %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+</section>
 
 <section class="limited">
   <%= form_tag charges_path, id:'chargeForm' do %>
@@ -90,7 +108,7 @@
         </div>
       <% end %>
     </article>
-  <a id="limited-btn-buy" class="btn btn-pri btn-lg">Make payment!</a>
+  <a id="limited-btn-buy" class="btn btn-pri btn-lg">seating is limited ‒ Buy ticket now</a>
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <%= hidden_field_tag 'stripeToken' %>
     <%= hidden_field_tag 'stripeEmail' %>
