@@ -18,62 +18,9 @@
         <div class="event-detail-img">
             <%= image_tag(@product.product_image, alt: @product.title) %>
         </div>
-        <!-- <div class="col-md-8 col-sm-8">
-          <h3 class="title">In this workshop:</h3>
-          <p><%= @product.description %></p>
-
-        </div> -->
-
-        <!-- <section class="ticket-resgister">
-            <div class="col-md-3 col-sm-3 col-md-offset-1"">
-                <div class="ticket clearfix">
-                    <h3 class="title">two day event</h3>
-                    <div class="ticket-value"><span>$<%= ("%.f" % @product.price) %></span></div>
-                    <ul>
-                        <li>Full-access to all code</li>
-                        <li>Free wifi at the workshop</li>
-                    </ul>
-
-                    <%= form_tag charges_path, id:'chargesForm' do %>
-                      <article>
-                        <% if flash[:error].present? %>
-                          <div id="error_explanation">
-                            <p><%= flash[:error] %></p>
-                          </div>
-                        <% end %>
-                      </article>
-
-                      <script src="https://checkout.stripe.com/checkout.js"></script>
-                      <%= hidden_field_tag 'stripeToken' %>
-                      <%= hidden_field_tag 'stripeEmail' %>
-                      <%= hidden_field_tag 'sku', @product.id %>
-                      <a id="btn-buy" class="btn btn-pri"><i class="button-icon"></i>Buy ticket</a>
-                      <script>
-                          var handler = StripeCheckout.configure({
-                            key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-                            token: function(token, arg) {
-                              document.getElementById("stripeToken").value = token.id;
-                              document.getElementById("stripeEmail").value = token.email;
-                              document.getElementById("chargesForm").submit();
-                            }
-                          });
-                           document.getElementById('btn-buy').addEventListener('click', function(e) {
-                            handler.open({
-                              name: 'Cocoa Academy',
-                              description: '<%=  @product.title %> ($300)',
-                              amount: <%=  @product.price_in_cents %>
-                          });
-                          e.preventDefault();
-                         })
-                      </script>
-                    <% end %>
-                </div>
 
 
-                </div>
 
-
-        </section> -->
 
     </div>
 </section>
@@ -82,7 +29,7 @@
 
 
 <section class="limited">
-  <%= form_tag charges_path, id:'chargeForm' do %>
+  <%= form_tag charges_path, id:'chargesForm' do %>
     <article>
       <% if flash[:error].present? %>
         <div id="error_explanation">
@@ -90,12 +37,12 @@
         </div>
       <% end %>
     </article>
-  <a id="limited-btn-buy" class="btn btn-pri btn-lg">Make payment!</a>
+
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <%= hidden_field_tag 'stripeToken' %>
     <%= hidden_field_tag 'stripeEmail' %>
-    <%= hidden_field_tag 'amount', ("%.f" % @product.price) %>
-
+    <%= hidden_field_tag 'sku', @product.id %>
+    <a id="btn-buy" class="btn btn-pri"><i class="button-icon"></i>Buy ticket</a>
     <script>
         var handler = StripeCheckout.configure({
           key: '<%= Rails.configuration.stripe[:publishable_key] %>',
@@ -105,10 +52,10 @@
             document.getElementById("chargesForm").submit();
           }
         });
-         document.getElementById('limited-btn-buy').addEventListener('click', function(e) {
+         document.getElementById('btn-buy').addEventListener('click', function(e) {
           handler.open({
             name: 'Cocoa Academy',
-            description: '<%=  @product.title %> ($<%= ("%.f" % @product.price) %>)',
+            description: '<%=  @product.title %> ($500)',
             amount: <%=  @product.price_in_cents %>
         });
         e.preventDefault();
