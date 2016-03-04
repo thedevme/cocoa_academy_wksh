@@ -55,7 +55,7 @@
          document.getElementById('btn-buy').addEventListener('click', function(e) {
           handler.open({
             name: 'Cocoa Academy',
-            description: '<%=  @product.title %> ($500)',
+            description: '<%=  @product.title %> ($<%= cost_dollars = sprintf('%02.f', @product.price) %>)',
             amount: <%=  @product.price_in_cents %>
         });
         e.preventDefault();
