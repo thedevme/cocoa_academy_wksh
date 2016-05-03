@@ -1,24 +1,24 @@
 
 @font-face {
   font-family: 'myriad_set_prothin';
-  src: url('myriadsetpro-thin-webfont.eot');
-  src: url('myriadsetpro-thin-webfont.eot?#iefix') format('embedded-opentype'),
-  url('myriadsetpro-thin-webfont.woff2') format('woff2'),
-  url('myriadsetpro-thin-webfont.woff') format('woff'),
-  url('myriadsetpro-thin-webfont.ttf') format('truetype'),
-  url('myriadsetpro-thin-webfont.svg#myriad_set_prothin') format('svg');
+  src: url(asset-path('myriadsetpro-thin-webfont.eot'));
+  src: url(asset-path('myriadsetpro-thin-webfont.eot?#iefix')) format('embedded-opentype'),
+  url(asset-path('myriadsetpro-thin-webfont.woff2')) format('woff2'),
+  url(asset-path('myriadsetpro-thin-webfont.woff')) format('woff'),
+  url(asset-path('myriadsetpro-thin-webfont.ttf')) format('truetype'),
+  url(asset-path('myriadsetpro-thin-webfont.svg#myriad_set_prothin')) format('svg');
   font-weight: lighter;
   font-style: lighter;
 }
 
 @font-face {
   font-family: 'myriad_set_probold';
-  src: url('myriadsetpro-bold-webfont.eot');
-  src: url('myriadsetpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
-  url('myriadsetpro-bold-webfont.woff2') format('woff2'),
-  url('myriadsetpro-bold-webfont.woff') format('woff'),
-  url('myriadsetpro-bold-webfont.ttf') format('truetype'),
-  url('myriadsetpro-bold-webfont.svg#myriad_set_prothin') format('svg');
+  src: url(asset-path('myriadsetpro-bold-webfont.eot'));
+  src: url(asset-path('myriadsetpro-bold-webfont.eot?#iefix')) format('embedded-opentype'),
+  url(asset-path('myriadsetpro-bold-webfont.woff2')) format('woff2'),
+  url(asset-path('myriadsetpro-bold-webfont.woff')) format('woff'),
+  url(asset-path('myriadsetpro-bold-webfont.ttf')) format('truetype'),
+  url(asset-path('myriadsetpro-bold-webfont.svg#myriad_set_prothin')) format('svg');
   font-weight: lighter;
   font-style: lighter;
 }
