@@ -1,0 +1,243 @@
+
+@font-face {
+  font-family: 'myriad_set_prothin';
+  src: url('myriadsetpro-thin-webfont.eot');
+  src: url('myriadsetpro-thin-webfont.eot?#iefix') format('embedded-opentype'),
+  url('myriadsetpro-thin-webfont.woff2') format('woff2'),
+  url('myriadsetpro-thin-webfont.woff') format('woff'),
+  url('myriadsetpro-thin-webfont.ttf') format('truetype'),
+  url('myriadsetpro-thin-webfont.svg#myriad_set_prothin') format('svg');
+  font-weight: lighter;
+  font-style: lighter;
+}
+
+@font-face {
+  font-family: 'myriad_set_probold';
+  src: url('myriadsetpro-bold-webfont.eot');
+  src: url('myriadsetpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('myriadsetpro-bold-webfont.woff2') format('woff2'),
+  url('myriadsetpro-bold-webfont.woff') format('woff'),
+  url('myriadsetpro-bold-webfont.ttf') format('truetype'),
+  url('myriadsetpro-bold-webfont.svg#myriad_set_prothin') format('svg');
+  font-weight: lighter;
+  font-style: lighter;
+}
+
+p {
+  font-family: "myriad_set_prothin";
+  font-size: 20px;
+}
+
+#header-feature-real-world {
+  display: block;
+  width: 171px;
+  height: 74px;
+  background: url(asset-path('header-real-world.svg')) no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#header-feature-code-based {
+  display: block;
+  width: 188px;
+  height: 67px;
+  background: url(asset-path('header-code-based.svg')) no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.row {
+  max-width: 62.5rem;
+}
+
+.pov {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.copy {
+  text-align: center;
+}
+
+.custom-button {
+  background-color: #BF1238;
+  font-family: "myriad_set_prothin";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 14px;
+}
+
+.button:hover {
+  background-color: #D9133F;
+}
+
+input#fieldEmail {
+  height:3rem;
+  font-family: "myriad_set_prothin";
+  font-size: 28px;
+}
+
+.postfix.button {
+  height: 3rem;
+}
+
+.sign-up-email {
+  width:73%;
+  float:left;
+  background:#fff;
+  border:1px solid #ccc;
+  border-top:1px solid #bbb;
+}
+
+@media only screen and (min-width: 40.063em) {
+  .features-container {
+    border-top: 1px solid #979797;
+    padding-top: 25px;
+  }
+}
+
+.feature {
+  overflow: auto;
+}
+
+.feature-icon {
+  float: left;
+}
+
+.feature-icon img {
+  display: block;
+}
+
+.feature-content {
+  margin-left: 45px;
+}
+
+.course {
+  background-color: #FAFAFA;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  font-family: "myriad_set_prothin";
+}
+
+.course p {
+  line-height: 0.6;
+}
+
+.course h5 {
+  font-size: 28px;
+  font-weight: normal;
+  color: #BF1238;
+  font-family: "myriad_set_prothin";
+  margin-top: 20px;
+  margin-bottom: 8px;
+  padding-top: 20px;
+  line-height: 0.3
+}
+
+.course h5 small {
+  font-family: "Arial Narrow";
+  font-size: 26px;
+  font-weight: lighter;
+  color: #BF1238;
+}
+
+.course small {
+  font-size: 20px;
+}
+
+.date {
+  font-size: 10px;
+}
+
+.course img {
+  margin-bottom: 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+.title h2 {
+  font-family: "myriad_set_prothin";
+  font-size: 48px;
+  font-weight: normal;
+  color: #BF1238;
+  margin-top: 20px;
+  margin-bottom: -5px;
+}
+
+.title small {
+  font-family: "myriad_set_prothin";
+  font-size: 22px;
+}
+
+.bullet {
+  font-family: Arial;
+}
+
+.footer-row {
+    margin-left: 0px;
+    margin-right: 0px;
+    min-width: 100%;
+}
+
+footer {
+    background-color: #eee;
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+footer p {
+  line-height: 94%;
+}
+
+.sign-up {
+  margin: 25px 0;
+}
+
+.box {
+  width: 100%;
+  position: relative;
+}
+.ribbon {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  overflow: hidden;
+  width: 200px; height: 200px;
+  text-align: right;
+  font-family: "myriad_set_probold";
+}
+.ribbon span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #BF1238;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-48deg);
+  -webkit-transform: rotate(-48deg);
+  width: 150px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#D8D8D8 0%, #D8D8D8 100%);
+  position: absolute;
+  top: 35px; left: -33px;
+}
+
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 50%;
+  z-index: -1;
+}
+
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 50%;
+  z-index: -1;
+}

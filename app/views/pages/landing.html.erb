@@ -1,0 +1,161 @@
+<br>
+<div class="row pov">
+    <div class="large-10 large-centered columns">
+        <%= image_tag('swift-course.png', alt: 'picture of space') %>
+    </div>
+</div>
+
+<div class="row copy">
+  <div class="small-12 small-centered columns">
+    <p>Students will get the chance to build full apps that will help them get an understanding of the iOS App process.  Each project will take you step by step starting from an empty project until the project is complete.  These projects will give you the foundation will all you to experience most of the components that Apple gives you as well as some really good third-party components.  You will also get a screencast on the most popular 3rd party libraries and how to bring them into your app.</p>
+  </div>
+</div>
+
+<div class="sign-up">
+  <div class="row">
+    <%= form_tag 'mailing_list/subscribe', method: 'POST', id: 'subForm', 'data-has-zcom-email-handler': 1 do %>
+      <div class="row collapse">
+        <div class="small-10 medium-10 columns">
+          <%= email_field_tag :email, nil, id: 'fieldEmail', placeholder: 'Enter your email here' %>
+        </div>
+        <div class="small-2 medium-2 columns">
+          <%= submit_tag "Subscribe", class: 'postfix button custom-button' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="title small-6 small-centered columns">
+    <h2>Upcoming Workshops</h2>
+    <small>Hands On</small>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-6 columns">
+    <div class="course">
+      <h5>Soccer Pong</h5>
+      <small>Sprite Kit and Apple TV</small>
+      <p>
+        <small class="date">July 27</small>
+        <small class="bullet">•</small>
+        <small class="date">TBD</small>
+      </p>
+      <p><%= image_tag('soccer-pong-small.png', alt: 'image for article') %></p>
+    </div>
+  </div>
+
+  <div class="small-6 columns">
+    <div class="course">
+      <h5>Super Cat</h5>
+      <small>Sprite Kit and Apple TV</small>
+      <p>
+        <small>July 27</small>
+        <small class="bullet">•</small>
+        <small>TBD</small>
+      </p>
+      <p><%= image_tag('supercat-small.png', alt: 'image for article') %></p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="title small-6 small-centered columns">
+    <h2>Online Courses</h2>
+    <small>Learn at your own pace</small>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-6 columns">
+    <div class="course box">
+      <div class="ribbon"><span>FREE</span></div>
+      <h5>Sprite Kit and Apple TV</h5>
+      <small>Learn the basics of swift.</small>
+      <p>
+        <small>July 27</small>
+        <small class="bullet">•</small>
+        <small>TBD</small>
+      </p>
+      <p><%= image_tag('swift-course-small.png', alt: 'image for article') %></p>
+    </div>
+  </div>
+</div>
+
+<!-- <div class='row'>
+  <div class='large-3 columns'>
+    <div class='features-container'>
+      <h4 id='header-feature-real-world'>5 Real World Apps</h4>
+    </div>
+  </div>
+  <div class='large-9 columns'>
+    <div class='features-container'>
+      <div class='row'>
+        <div class='large-4 columns'>
+          <div class='feature'>
+            <div class='feature-icon'>
+              <img alt='Cocoa Academy' src='icon-cart.svg'>
+            </div>
+            <div class='feature-content'>
+              <h5>Shopping Cart App</h5>
+              <p>Simple E-Comm app</p>
+            </div>
+          </div>
+        </div>
+        <div class='large-4 columns'>
+          <div class='feature'>
+            <div class='feature-icon'>
+              <img alt='Cocoa Academy' src='icon-cart.svg'>
+            </div>
+            <div class='feature-content'>
+              <h5>ToDo Movies</h5>
+              <p>Keep a list of movies you want to see using Core Data.</p>
+            </div>
+          </div>
+        </div>
+        <div class='large-4 columns'>
+          <div class='feature'>
+            <div class='feature-icon'>
+              <img alt='Cocoa Academy' src='icon-cart.svg'>
+            </div>
+            <div class='feature-content'>
+              <h5>Project Name</h5>
+              <p>Project description goes here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class='row'>
+  <div class='large-9 columns large-offset-3'>
+    <div class='row'>
+      <div class='large-4 columns'>
+        <div class='feature'>
+          <div class='feature-icon'>
+            <img alt='Cocoa Academy' src='icon-cart.svg'>
+          </div>
+          <div class='feature-content'>
+            <h5>Hello Doggie</h5>
+            <p>Slightly more intersting Hello World</p>
+          </div>
+        </div>
+      </div>
+      <div class='large-4 columns end'>
+        <div class='feature'>
+          <div class='feature-icon'>
+            <img alt='Cocoa Academy' src='icon-cart.svg'>
+          </div>
+          <div class='feature-content'>
+            <h5>Instagram App</h5>
+            <p>Instagram type app using Parse</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
