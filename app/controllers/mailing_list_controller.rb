@@ -6,12 +6,15 @@ class MailingListController < ApplicationController
     if params[:email].present?
       begin
         MailingList.new(list_id).subscribe(params[:email])
-        render json: { message: "Successfully subscribed to the list!" }
+        flash[:notice] = "Successfully subscribed to the list!"
+        redirect_to :back
       rescue Gibbon::MailChimpError => _
-        render json: { message: "Unable to subscribe to the list. Email was invalid or user was already a member." }, status: 500
+        flash[:alert] = "Unable to subscribe to the list. Email was invalid or user was already a member."
+        redirect_to :back
       end
     else
-      render json: { message: "Email is required" }, status: 500
+      flash[:alert] = "Unable to subscribe to the list. Email was invalid or user was already a member."
+      redirect_to :back
     end
   end
 end
