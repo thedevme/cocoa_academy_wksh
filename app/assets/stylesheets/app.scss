@@ -57,6 +57,13 @@ p {
   margin-top: 50px;
 }
 
+header img {
+  max-width: 299px;
+  max-height: 134px;
+  display: block;
+  margin: 20px auto;
+}
+
 .copy {
   text-align: center;
 }
@@ -134,7 +141,11 @@ input#fieldEmail {
   margin-top: 20px;
   margin-bottom: 8px;
   padding-top: 20px;
-  line-height: 0.3
+  line-height: 0.3em;
+}
+
+[type='email'] {
+  margin: 0 0 0rem;
 }
 
 .course h5 small {
