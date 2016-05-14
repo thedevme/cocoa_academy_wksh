@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   def show
   end
 
+  def pong
+  end
+
   def new
     @product = Product.new
   end

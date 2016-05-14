@@ -74,6 +74,10 @@ header img {
   line-height: 14px;
 }
 
+a.button.custom-button,  {
+  color: #ffffff;
+}
+
 .button:hover {
   background-color: #D9133F;
 }
@@ -183,8 +187,34 @@ input#fieldEmail {
   font-size: 22px;
 }
 
+.title-workshop h2 {
+  font-family: "myriad_set_prothin";
+  font-size: 48px;
+  font-weight: normal;
+  color: #BF1238;
+  text-align: center;
+  line-height: 0.5;
+}
+
+.title-workshop img {
+  padding: 20px 0;
+}
+
+.pov .title-workshop small {
+  font-family: "myriad_set_prothin";
+  font-size: 22px;
+  width: 100%;
+  text-align: center;
+}
+
 .bullet {
   font-family: Arial;
+}
+
+.pov .event-details .bullet {
+  padding-top: 5px;
+  font-family: Arial;
+  font-size: 17px;
 }
 
 .footer-row {
@@ -249,4 +279,83 @@ footer p {
   content: "";
   position: absolute; right: 0px; top: 50%;
   z-index: -1;
+}
+
+.event-details {
+}
+
+
+
+
+
+.plan {
+  background-color: #FFF;
+  border: 1px solid #e3e3e3;
+  cursor: pointer;
+  margin-bottom: 20px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.plan:hover {
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+.plan .plan-header {
+  border-bottom: 1px solid;
+  border-bottom-color: #e3e3e3;
+  padding: 10px 10px 10px;
+  text-align: center;
+}
+.plan .plan-header .plan-price {
+  font-size: 50px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.plan .plan-header .plan-price .symbol {
+  font-size: 20px;
+  vertical-align: top;
+  position: relative;
+  margin: 7px 0;
+  display: inline-block;
+}
+.plan .plan-header .plan-price .term {
+  font-size: 20px;
+  vertical-align: bottom;
+  display: inline-block;
+}
+.plan .plan-header .plan-name {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.plan .plan-list {
+  padding-top: 20px;
+}
+.plan .plan-list ul {
+  display: table;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.plan .plan-list ul li {
+  list-style: none;
+  border-bottom: 1px solid #EAECEB;
+  line-height: 40px;
+}
+.plan .plan-list ul li:last-child {
+  border-bottom: 0;
+}
+.plan .plan-list ul li i {
+  margin-right: 12px;
+}
+.plan .plan-footer {
+  padding: 20px;
+  text-align: center;
+}
+.plan.featured {
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+      margin-top: 5px;
 }
