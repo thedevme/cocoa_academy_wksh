@@ -3,6 +3,8 @@
 
 
 //jQuery to collapse the navbar on scroll
+// for stuff like this you should really debounce instead
+/*
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
@@ -16,6 +18,7 @@ $(window).scroll(function() {
     } else {
   }
 });
+*/
 
 
 //jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -282,6 +285,7 @@ $(window).on('load', function() {
     _frm.submit(function(){
       if (Validate.email(_email.val()) === false){
         _help.html('Please enter a valid email to signup.').removeClass('hide').addClass('alert');
+        _to = window.setTimeout(hideMessage,4000,_help)
       } else {
         _btn.prop('disabled',true);
         window.clearTimeout(_to);

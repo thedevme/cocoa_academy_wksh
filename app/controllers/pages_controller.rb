@@ -11,7 +11,6 @@ class PagesController < ApplicationController
   end
 
   def ios10_for_beginners
-    @bodyclass = 'with-nav'
   end
 
   def new
