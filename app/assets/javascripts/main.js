@@ -127,12 +127,6 @@ $(".mobile-menu-icon").click(function(){
 });
 
 
-
-
-
-
-
-
 $(window).on('load', function() {
     var nextYear = (new Date().getFullYear() + 1) + "/01/12/",
       template = _.template($('#upcomeing-events-template').html()),
@@ -275,8 +269,101 @@ $(window).on('load', function() {
     );
 
 	//MILESTONE
-    $('.timer').countTo();
+  // $('.timer').countTo();
+	// $('.register').magnificPopup({type: 'ajax'});
 
-	$('.register').magnificPopup({type: 'ajax'});
+  // SIGNUP FORM
+    var _frm    = $('#subForm'),
+        _email  = _frm.find('#fieldEmail'),
+        _btn    = _frm.find('button[type=submit]'),
+        _help   = _frm.find('#emailHelp'),
+        _to     = 0;
 
+    _frm.submit(function(){
+      if (Validate.email(_email.val()) === false){
+        _help.html('Please enter a valid email to signup.').removeClass('hide').addClass('alert');
+      } else {
+        _btn.prop('disabled',true);
+        window.clearTimeout(_to);
+        $.ajax({
+          url       : _frm.attr('action'),
+          data      : _frm.serialize(),
+          type      : 'POST',
+          dataType  : 'json'
+        })
+          .done(function(response){
+            if (response.status === false){
+              _help.html(response.message).removeClass('hide success').addClass('alert');
+            }
+            else{
+              _help.html(response.message).removeClass('hide alert').addClass('success');
+              _email.val('');
+            }
+            _to = window.setTimeout(hideMessage,4000,_help)
+          })
+          .always(function(){
+           _btn.prop('disabled',false);
+          });
+      }
+      return false;
+    });
+
+    _email.on('keyup',function(){
+      if (!_help.hasClass('hide'))
+          hideMessage(_help);
+    })
 	});
+
+  function hideMessage(_help){
+      _help.removeClass('alert success').addClass('hide');
+  }
+
+/**
+* https://github.com/GiancarloGomez/javascript.validation
+* A little gift from my validation scripts :-)
+*
+* Validate()
+* @hint Global Validate object which can be used to validate a string to a specified format
+*/
+var Validate = {
+    'date': function(value){
+        return !(/Invalid|NaN/).test(new Date(value));
+    },
+    'dateTime': function(value){
+        return !(/Invalid|NaN/).test(new Date(value));
+    },
+    'email': function(value){
+        return (/^[_a-zA-Z0-9\-]+((\.[_a-zA-Z0-9\-]+)*|(\+[_a-zA-Z0-9\-]+)*)*@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]{2,4})$/i).test(value);
+    },
+    'float': function(value){
+        return (/^[\-+]?[0-9]*\.?[0-9]+$/).test(value);
+    },
+    'integer': function (value){
+        return (/^\d+$/).test(value);
+    },
+    'slug': function(value) {
+        return (/^[a-z0-9]{3,}(?:(-|_)[a-z0-9]+)*$/).test(value);
+    },
+    'slugWithPeriod': function(value) {
+        return (/^[a-z0-9]{2,}(?:(-|\.|_)[a-z0-9]+)*$/).test(value);
+    },
+    // links for class or type validation
+    'datepicker': function(value){
+        return Validate.date(value);
+    },
+    'datetime': function(value){
+        return Validate.date(value);
+    },
+    'number': function (value){
+        return Validate.integer(value);
+    },
+    'time': function(value){
+        return Validate.dateTime(value);
+    },
+    'timepicker': function(value){
+        return Validate.dateTime(value);
+    },
+    'username': function(value) {
+        return Validate.slugWithPeriod(value);
+    }
+};

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :purchases, only: [:show]
   # resources :products, :as => "events"
 
+  get '/ios10-for-beginners', to: 'pages#ios10_for_beginners', as: 'ios10_for_beginners'
   get '/pong', to: 'pages#pong', as: 'pong'
   get '/events', to: 'products#index', as: 'products'
   get '/events/:id' , to: 'products#show', as: 'product'

@@ -10,7 +10,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<body>
+<body class="<%= @bodyclass %>">
 
 
 <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
@@ -23,7 +23,7 @@
     <% end %>
     <div class="row">
       <div class="small-12 large-centered columns">
-        <%= image_tag('logo-new.svg', alt: 'Cocoa Academy') %>
+        <a href="/"><%= image_tag('logo-new.svg', alt: 'Cocoa Academy') %></a>
       </div>
     </div>
   </div>

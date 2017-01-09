@@ -23,9 +23,27 @@
   font-style: lighter;
 }
 
-p {
+body,
+h1,h2,h3,h4,h5,
+.row{
   font-family: "myriad_set_prothin";
+}
+
+.row{
   font-size: 20px;
+}
+
+/* New Navbar view */
+body.with-nav > header {
+  background-color:#F5F5F5;
+  padding:0;
+  margin-bottom: 40px;
+}
+body.with-nav > header img {
+  height:60px;
+  margin:10px 0;
+  width: auto;
+  display: block;
 }
 
 #header-feature-real-world {
@@ -55,6 +73,42 @@ p {
 .pov {
   margin-bottom: 50px;
 }
+.pov img {
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.pov h1 {
+  color: #BF1238;
+  font-size:4.6875rem;
+  display: block;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.pov h1 small {
+  font-size:.48em;
+  color:#333;
+  display: block;
+  position: relative;
+  line-height: 1;
+}
+.pov h1 small + small {
+  color: #BF1238;
+  font-size:.33em;
+}
+.row img {
+  width: auto;
+}
+.about-the-author img{
+  float: left;
+  margin:0;
+  height:220px;
+  width:220px;
+}
+.about-the-author img + div {
+  margin-left:250px;
+}
 
 header img {
   max-height: 134px;
@@ -68,7 +122,6 @@ header img {
 
 .custom-button {
   background-color: #BF1238;
-  font-family: "myriad_set_prothin";
   font-weight: 600;
   font-size: 24px;
   line-height: 14px;
@@ -84,7 +137,6 @@ a.button.custom-button,  {
 
 input#fieldEmail {
   height:3rem;
-  font-family: "myriad_set_prothin";
   font-size: 28px;
 }
 
@@ -98,6 +150,16 @@ input#fieldEmail {
   background:#fff;
   border:1px solid #ccc;
   border-top:1px solid #bbb;
+}
+
+.top-border{
+  border-top: 1px solid #979797;
+}
+.right-border{
+  border-right: 1px solid #979797;
+}
+.top-padding {
+  padding-top: 20px;
 }
 
 @media only screen and (min-width: 40.063em) {
@@ -128,7 +190,10 @@ input#fieldEmail {
   margin-top: 20px;
   text-align: center;
   width: 100%;
-  font-family: "myriad_set_prothin";
+}
+
+.course  a {
+  color: currentColor !important;
 }
 
 .course p {
@@ -139,7 +204,6 @@ input#fieldEmail {
   font-size: 28px;
   font-weight: normal;
   color: #BF1238;
-  font-family: "myriad_set_prothin";
   margin-top: 20px;
   margin-bottom: 8px;
   padding-top: 20px;
@@ -166,6 +230,7 @@ input#fieldEmail {
 }
 
 .course img {
+  width:auto;
   margin-bottom: 20px;
 }
 
@@ -174,7 +239,6 @@ input#fieldEmail {
 }
 
 .title h2 {
-  font-family: "myriad_set_prothin";
   font-size: 48px;
   font-weight: normal;
   color: #BF1238;
@@ -183,12 +247,10 @@ input#fieldEmail {
 }
 
 .title small {
-  font-family: "myriad_set_prothin";
   font-size: 22px;
 }
 
 .title-workshop h2 {
-  font-family: "myriad_set_prothin";
   font-size: 48px;
   font-weight: normal;
   color: #BF1238;
@@ -201,7 +263,6 @@ input#fieldEmail {
 }
 
 .pov .title-workshop small {
-  font-family: "myriad_set_prothin";
   font-size: 22px;
   width: 100%;
   text-align: center;
@@ -250,7 +311,6 @@ footer p {
   overflow: hidden;
   width: 200px; height: 200px;
   text-align: right;
-  font-family: "myriad_set_probold";
 }
 .ribbon span {
   font-size: 14px;
@@ -283,9 +343,6 @@ footer p {
 
 .event-details {
 }
-
-
-
 
 
 .plan {
@@ -358,4 +415,23 @@ footer p {
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
       margin-top: 5px;
+}
+
+// remove right border and center logo in new nav bar
+@media (max-width:990px){
+  .about-the-author{
+    text-align: center;
+  }
+  .about-the-author img {
+    float: none;
+    margin:20px auto;
+  }
+  .about-the-author img + div{
+    margin:0;
+    text-align: left;
+  }
+}
+@media (max-width:640px){
+  .right-border {border-right:none;}
+  body.with-nav > header img {margin:10px auto;}
 }

@@ -17,9 +17,10 @@
         <div class="input-group">
           <%= email_field_tag :email, nil, id: 'fieldEmail', placeholder: 'Enter your email here' %>
           <div class="input-group-button">
-            <%= submit_tag "Subscribe", class: 'postfix button custom-button' %>
+            <button type="submit" class="postfix button custom-button">Subscribe</button>
           </div>
         </div>
+        <p class="callout hide" id="emailHelp"></p>
       <% end %>
     </div>
   </div>
@@ -34,27 +35,31 @@
 <div class="row">
   <div class="small-12 large-6 columns">
     <div class="course">
-      <h5><a href="https://forwardswift.com/workshops/13">Soccer Pong</a></h5>
-      <small>Sprite Kit and Apple TV</small>
-      <p>
-        <small class="date">July 27</small>
-        <small class="bullet">•</small>
-        <small><a href="https://forwardswift.com/workshops/13">Learn More</a></small>
-      </p>
-      <p><%= image_tag('soccer-pong-small.png', alt: 'image for article') %></p>
+      <a href="https://forwardcourses.com/workshops/13" target="blank">
+        <h5>Soccer Pong</h5>
+        <small>Sprite Kit and Apple TV</small>
+        <p>
+          <small class="date">July 27</small>
+          <small class="bullet">•</small>
+          <small>Learn More</small>
+        </p>
+        <p><%= image_tag('soccer-pong-small.png', alt: 'image for article') %></p>
+      </a>
     </div>
   </div>
 
   <div class="small-12 large-6 columns">
     <div class="course">
-      <h5><a href="http://360idev.com/sessions/defend-universe-super-cat-using-sprite-kit-apple-tv/">Super Cat</a></h5>
-      <small>Sprite Kit and Apple TV</small>
-      <p>
-        <small class="date">August 21</small>
-        <small class="bullet">•</small>
-        <small><a href="http://360idev.com/sessions/defend-universe-super-cat-using-sprite-kit-apple-tv/">Learn More</a></small>
-      </p>
-      <p><%= image_tag('supercat-small.png', alt: 'image for article') %></p>
+      <a href="http://360idev.com/sessions/defend-universe-super-cat-using-sprite-kit-apple-tv/" target="blank">
+        <h5>Super Cat</h5>
+        <small>Sprite Kit and Apple TV</small>
+        <p>
+          <small class="date">August 21</small>
+          <small class="bullet">•</small>
+          <small>Learn More</small>
+        </p>
+        <p><%= image_tag('supercat-small.png', alt: 'image for article') %></p>
+      </a>
     </div>
   </div>
 </div>

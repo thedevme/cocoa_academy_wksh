@@ -10,6 +10,10 @@ class PagesController < ApplicationController
   def pong
   end
 
+  def ios10_for_beginners
+    @bodyclass = 'with-nav'
+  end
+
   def new
     @product = Product.new
   end
