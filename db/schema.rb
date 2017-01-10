@@ -46,19 +46,6 @@ ActiveRecord::Schema.define(version: 20151210135705) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
-  create_table "events", force: :cascade do |t|
-    t.string   "title"
-    t.string   "subtitle"
-    t.text     "description"
-    t.string   "sku"
-    t.decimal  "price"
-    t.string   "event_image"
-    t.string   "event_thumb_image"
-    t.string   "details"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
