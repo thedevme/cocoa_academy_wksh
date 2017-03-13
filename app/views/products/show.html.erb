@@ -9,9 +9,8 @@
 </div>
 
 <div class="row">
-    <div class="large-12 columns">
-
-        
+    <p class="text-center">In this workshop, we will build a Square Cash clone called My Dinero. During the one day workshop, we will use features such as SiriKit, Contacts and TouchID for security.  There is no experience necessary for attending this workshop.  The instructor, Craig Clayton, who wrote the book iOS 10 Programming for Beginners, will guide you step by step in buidling an iOS app.  By the end of the workshop, you will have a better understanding of how to create an iOS app for the lastest iOS.</p>
+   
     <%= form_tag charges_path, id:'chargesForm' do %>
       <article>
         <% if flash[:error].present? %>
@@ -25,7 +24,7 @@
       <%= hidden_field_tag 'stripeToken' %>
       <%= hidden_field_tag 'stripeEmail' %>
       <%= hidden_field_tag 'sku', @product.id %>
-      <a id="btn-buy" class="btn btn-pri"><i class="button-icon"></i>Buy ticket</a>
+      <p class="text-center"><a id="btn-buy" class="btn btn-pri"><i class="button-icon"></i>Buy ticket</a></p>
       <script>
           var handler = StripeCheckout.configure({
             key: "<%= Rails.configuration.stripe[:publishable_key] %>",
@@ -38,14 +37,13 @@
            document.getElementById('btn-buy').addEventListener('click', function(e) {
             handler.open({
               name: 'Cocoa Academy',
-              description: '<%=  @product.title %> ($1.00)',
+              description: '<%=  @product.title %> ($<%= ("%.f" % @product.price) %>)',
               amount: <%=  @product.price_in_cents %>
           });
           e.preventDefault();
          })
       </script>
     <% end %>
-    </div>
 </div>
 
 <div class="classfeatures">
