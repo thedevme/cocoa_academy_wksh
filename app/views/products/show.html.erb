@@ -10,6 +10,8 @@
 
 <div class="row">
     <p class="text-center">In this workshop, we will build a Square Cash clone called My Dinero. During the one day workshop, we will use features such as SiriKit, Contacts and TouchID for security.  There is no experience necessary for attending this workshop.  The instructor, Craig Clayton, who wrote the book iOS 10 Programming for Beginners, will guide you step by step in buidling an iOS app.  By the end of the workshop, you will have a better understanding of how to create an iOS app for the lastest iOS.</p>
+    
+    <p class="text-center">This one day workshop, will be held at The Iron Yard in St. Petersburg, FL.  Workshop will start promptly at 9:00am - 5:00pm and will cost $50 to attend plus a $1.80 credit card processing fee.  Seating is limited, buy a ticket now.</p>
    
     <%= form_tag charges_path, id:'chargesForm' do %>
       <article>
@@ -48,26 +50,46 @@
 
 <div class="classfeatures">
     <div class="row listfeatures">
+        <h2>Workshop Features</h2>
         <div class="small-12 large-4 medium 4 columns">
-            <p class="text-center"><%= image_tag('feature1.png', alt: 'feature 1') %></p>
+            <p class="text-center"><%= image_tag('feature1.png', alt: 'Siri') %></p>
             <div class="featuretext">
-                <h2>Siri</h2>
-                <p>Mauris auctor nulla vitae velit pellentesque, non pellentesque velit elementum. Suspendisse nec dapibus turpis. Integer lacinia sodales condimentum. Suspendisse et erat leo.</p>
+                <h3>Siri</h3>
+                <p>You will learn how to use "Hey, Siri" to request and send money.  SiriKit was introduced in iOS 10 and we will the basics of what types of apps can get SiriKit.</p>
             </div>
         </div>
         <div class="small-12 large-4 medium 4 columns">
-            <p class="text-center"><%= image_tag('feature2.png', alt: 'feature 2') %></p>
+            <p class="text-center"><%= image_tag('feature2.png', alt: 'TouchID') %></p>
             <div class="featuretext">
-                <h2>TouchID</h2>
-                <p>Mauris auctor nulla vitae velit pellentesque, non pellentesque velit elementum. Suspendisse nec dapibus turpis. Integer lacinia sodales condimentum. Suspendisse et erat leo.</p>
+                <h3>TouchID</h3>
+                <p>We will use TouchID for security.  In this app,  we will create a log in for users to access with either an email or they can use their fingerprint to log into their account.</p>
             </div>
         </div>
         <div class="small-12 large-4 medium 4 columns">
-            <p class="text-center"><%= image_tag('feature3.png', alt: 'feature 3') %></p>
+            <p class="text-center"><%= image_tag('feature3.png', alt: 'Contacts') %></p>
             <div class="featuretext">
-                <h2>Contacts</h2>
+                <h3>Contacts</h3>
                 <p class="text-center"> 
-                Mauris auctor nulla vitae velit pellentesque, non pellentesque velit elementum. Suspendisse nec dapibus turpis. Integer lacinia sodales condimentum. Suspendisse et erat leo.</p>
+                We will see how you can import a users contacts into the app, in order to send and request money to friends and family.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="classfeatures">
+    <div class="row listfeatures">
+        <div class="small-12 large-4 medium 4 columns">
+            <p class="text-center"><%= image_tag('feature4.png', alt: 'Swift 3') %></p>
+            <div class="featuretext">
+                <h3>Swift 3</h3>
+                <p>You will learn the lastest in Swift 3 for this workshop.</p>
+            </div>
+        </div>
+        <div class="small-12 large-4 medium 4 columns end">
+            <p class="text-center"><%= image_tag('feature5.png', alt: 'Storyboard') %></p>
+            <div class="featuretext">
+                <h3>Storyboard</h3>
+                <p>We will work with Storyboard in order to create all of our UI elements.  Storyboard makes it easy for us to create apps that support multiple device sizes.</p>
             </div>
         </div>
     </div>
