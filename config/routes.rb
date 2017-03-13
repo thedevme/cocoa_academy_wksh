@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :charges
   resources :leads
   resources :purchases, only: [:show]
-  # resources :products, :as => "events"
+  resources :products, :as => "events"
 
   get '/ios10-for-beginners', to: 'pages#ios10_for_beginners', as: 'ios10_for_beginners'
   get '/pong', to: 'pages#pong', as: 'pong'
