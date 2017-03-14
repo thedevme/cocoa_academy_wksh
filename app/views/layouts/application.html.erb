@@ -6,25 +6,62 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+    
   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+ 
   <%= csrf_meta_tags %>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
   <header>
-    <div class="container">
+   <!-- <div class="container">
       <div class="row">
         <div class="small-12 large-centered columns">
           <a href="/" class="float-left"><%= image_tag('logo.png', alt: 'Cocoa Academy') %></a>
-          <ul class="vertical medium-horizontal menu">
+            <div class="top-bar-right">
+      </div>
+          <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion">
             <li><a href="/">HOME</a></li>
             <li><a href="/ios10-for-beginners">iOS 10 BOOK</a></li>
             <li><a href="/events/swift-101-getting-started">SWIFT WORKSHOP</a></li>
           </ul>
         </div>
       </div>
+    </div>-->
+      <div class="row">
+  <div class="small-12 columns">
+
+    <div class="top-bar">
+
+      <div class="top-bar-title">
+
+        <a href="#">
+          <a href="/" class="float-left"><%= image_tag('logo.png', alt: 'Cocoa Academy') %></a>
+
+        </a>
+
+        <span class="menu-hamburger float-right" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+        <span class="menu-icon" data-toggle></span>
+        </span>
+
+      </div>
+
+      <div id="responsive-menu">
+        <div class="top-bar-right">
+          <ul class="menu align-right" data-responsive-menu="drilldown medium-dropdown" data-parent-link="true" data-back-button="<li class='js-drilldown-back'><a tabindex='0'>Back</a></li>">
+            <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion">
+              <li><a href="/">HOME</a></li>
+              <li><a href="/ios10-for-beginners">iOS 10 BOOK</a></li>
+              <li><a href="/events/swift-101-getting-started">SWIFT WORKSHOP</a></li>
+            </ul>
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
   </header>
   <!--/header-->
 
