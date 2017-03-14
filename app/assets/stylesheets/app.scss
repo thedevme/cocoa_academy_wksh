@@ -84,11 +84,27 @@ body > header .menu a{
   overflow: hidden;
 }
 
-.menu-hamburger {
-    padding: 20px 0 0 160px;
+.top-bar {
+    position: relative;
 }
 
+.menu-hamburger {
+    display: block;
+    right: 20px;
+    top: 33px;
+    position: absolute;
+}
 
+.menu-icon::after {
+    background: #000;
+    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+}
+
+.menu-icon::active::after,
+.menu-icon::hover::after {
+    background: #000;
+    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+}
 
 .row {
   max-width: 62.5rem;
