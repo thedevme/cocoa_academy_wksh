@@ -106,6 +106,8 @@ body > header .menu a{
     box-shadow: 0 7px 0 #000, 0 14px 0 #000;
 }
 
+
+
 .row {
   max-width: 62.5rem;
 }
@@ -475,4 +477,7 @@ footer p {
   .row h1 {font-size:50px !important;}
   .row h2 {font-size:36px !important;}
   .right-border {border-right:none;}
+  .is-drilldown { min-height: auto !important;max-width: auto !important;} 
+  body>header .menu {float: none;}
+  body>header .menu a {line-height: 60px;}
 }
