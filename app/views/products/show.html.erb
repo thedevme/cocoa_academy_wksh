@@ -3,6 +3,8 @@
     <h1 class="text-center">
       Swift 101
       <small>Getting Started</small>
+      <small>April 1st, 2017</small>
+      <small>St. Petersburg, FL</small>
     </h1>
     <%= image_tag('workshop-pov.png', alt: 'iOS Beginners Workshop') %>
   </div>
@@ -14,7 +16,7 @@
     <p class="text-center">This one day workshop, will be held at The Iron Yard in St. Petersburg, FL.  Workshop will start promptly at 9:00am - 5:00pm and will cost $50 to attend plus a $2.00 credit card processing fee.  Seating is limited, buy a ticket now.</p>
     
     <p class="text-center">Paying for the class reserves your spot.  No refunds 48 hours prior to the event.</p>
-   
+    
     <%= form_tag charges_path, id:'chargesForm' do %>
       <article>
         <% if flash[:error].present? %>
@@ -28,7 +30,9 @@
       <%= hidden_field_tag 'stripeToken' %>
       <%= hidden_field_tag 'stripeEmail' %>
       <%= hidden_field_tag 'sku', @product.id %>
+    <p class="text-center">April 1st, 2017<br/>The Iron Yard in St. Petersburg, FL</p>
       <p class="text-center"><a id="btn-buy" class="btn btn-pri"><i class="button-icon"></i>Buy ticket</a></p>
+    
       <script>
           var handler = StripeCheckout.configure({
             key: "<%= Rails.configuration.stripe[:publishable_key] %>",
@@ -49,6 +53,7 @@
       </script>
     <% end %>
 </div>
+
 
 <div class="classfeatures">
     <div class="row listfeatures">
