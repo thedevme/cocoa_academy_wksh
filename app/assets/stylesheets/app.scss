@@ -26,7 +26,7 @@
 body,
 h1,h2,h3,h4,h5,
 .row{
-  font-family: "myriad_set_prothin";
+  font-family: "Open Sans Condensed";
 }
 
 .row{
@@ -133,7 +133,7 @@ body > header .menu a{
   color:#333;
   display: block;
   position: relative;
-  line-height: 1;
+  line-height: 1.2;
 }
 .pov h1 small + small {
   color: #BF1238;
@@ -239,7 +239,7 @@ input#fieldEmail {
 }
 
 .course p {
-  line-height: 0.6;
+  line-height: 1.0;
 }
 
 .course h5 {
@@ -249,7 +249,7 @@ input#fieldEmail {
   margin-top: 20px;
   margin-bottom: 8px;
   padding-top: 20px;
-  line-height: 0.3em;
+  line-height: 0.8em;
 }
 
 [type='email'] {
