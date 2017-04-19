@@ -3,8 +3,8 @@
     <h1 class="text-center">
       Swift 101
       <small>Getting Started</small>
-      <small>March 30th - April 1st, 2017</small>
-        <small><a href="https://www.crowdcast.io/e/swift101">Live Online</a></small>
+      <small>April 1st, 2017</small>
+      <small>St. Petersburg, FL</small>
     </h1>
     <%= image_tag('workshop-pov.png', alt: 'iOS Beginners Workshop') %>
   </div>
@@ -13,12 +13,47 @@
 <div class="row">
     <p class="text-center">In this workshop, we will build a Square Cash clone called My Dinero. During the one day workshop, we will use features such as SiriKit, Contacts and TouchID for security.  There is no experience necessary for attending this workshop.  The instructor, Craig Clayton, who wrote the book iOS 10 Programming for Beginners, will guide you step by step in buidling an iOS app.  By the end of the workshop, you will have a better understanding of how to create an iOS app for the lastest iOS.</p>
     
-    <p class="text-center">This one day workshop, will be held online.  Workshop will start promptly at 10:00am - 5:00pm and will cost $50 to attend plus a $2.00 credit card processing fee.  Seating is limited, buy a ticket now.</p>
+    <p class="text-center">This one day workshop, will be held at The Iron Yard in St. Petersburg, FL.  Workshop will start promptly at 9:00am - 5:00pm and will cost $50 to attend plus a $2.00 credit card processing fee.  Seating is limited, buy a ticket now.</p>
     
     <p class="text-center">Paying for the class reserves your spot.  No refunds 48 hours prior to the event.</p>
-    <p class="text-center">April 1st, 2017 Online<br/></p>
-    <p class="text-center"><a id="btn-buy" class="btn btn-pri" href="https://www.crowdcast.io/e/swift101"><i class="button-icon"></i>Buy ticket</a></p>
+    
+    <%= form_tag charges_path, id:'chargesForm' do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+      </article>
+
+      <script src="https://checkout.stripe.com/checkout.js"></script>
+      <%= hidden_field_tag 'stripeToken' %>
+      <%= hidden_field_tag 'stripeEmail' %>
+      <%= hidden_field_tag 'sku', @product.id %>
+    <p class="text-center">April 1st, 2017<br/>The Iron Yard in St. Petersburg, FL</p>
+      <p class="text-center"><a id="btn-buy" class="btn btn-pri"><i class="button-icon"></i>Buy ticket</a></p>
+    
+      <script>
+          var handler = StripeCheckout.configure({
+            key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+            token: function(token, arg) {
+              document.getElementById("stripeToken").value = token.id;
+              document.getElementById("stripeEmail").value = token.email;
+              document.getElementById("chargesForm").submit();
+            }
+          });
+           document.getElementById('btn-buy').addEventListener('click', function(e) {
+            handler.open({
+              name: 'Cocoa Academy',
+              description: '<%=  @product.title %> ($<%= ("%.f" % @product.price) %>)',
+              amount: <%=  @product.price_in_cents %>
+          });
+          e.preventDefault();
+         })
+      </script>
+    <% end %>
 </div>
+
 
 <div class="classfeatures">
     <div class="row listfeatures">
